@@ -5,6 +5,10 @@
 #include <zlib.h>
 #include <unordered_set>
 #include "kseq.h"
+#include <set>
+#include <map>
+#include <fstream>
+#include <sstream>
 
 #ifndef KSEQ_INIT_READY
 #define KSEQ_INIT_READY
@@ -1054,12 +1058,51 @@ int KmerIndex::mapPair(const char *s1, int l1, const char *s2, int l2, int ec) c
 
 }
 
+template<typename Out>
+void split(const std::string &s, char delim, Out result) {
+    std::stringstream ss(s);
+    std::string item;
+    while (std::getline(ss, item, delim)) {
+        *(result++) = item;
+    }
+}
+
+std::map<std::string, std::string> __seqs__;
+
 // use:  match(s,l,v)
 // pre:  v is initialized
 // post: v contains all equiv classes for the k-mers in s
 void KmerIndex::match(const char *s, int l, std::vector<std::pair<KmerEntry, int>>& v) const {
 
-    std::cout << s << std::endl;
+    static bool started = false;
+    
+    if (!started)
+    {
+        /*
+         * We can manually process the k-mers for now...
+         */
+        
+        std::ifstream r("sequinsKmers.txt");
+        
+        std::string line;
+        while (std::getline(r, line))
+        {
+            std::vector<std::string> toks;
+            split(line, '\t', std::back_inserter(toks));
+            assert(!toks.empty());
+            
+            if (toks[0] == "Name")
+            {
+                continue;
+            }
+            
+            __seqs__[toks[1]] = toks[0]; // Normal
+            __seqs__[toks[2]] = toks[0]; // Reverse complement
+        }
+
+        r.close();
+        started = true;
+    }
 
     /*
      * Added by Ted!!!!! HACK to
@@ -1069,9 +1112,14 @@ void KmerIndex::match(const char *s, int l, std::vector<std::pair<KmerEntry, int
     
     for (int i = 0;  ted != ted_end; ++i,++ted) {
         auto a = ted->first.rep();
-        std::cout << a.toString() << std::endl;
+        auto b = a.toString();
+        
+        if (__seqs__.count(b))
+        {
+            std::cout << b << std::endl;
+            std::cout << 1 << std::endl;
+        }
     }
-
     
     KmerIterator kit(s), kit_end;
     bool backOff = false;
