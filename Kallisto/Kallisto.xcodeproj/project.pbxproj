@@ -1,0 +1,386 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EFB8C1EB1F95BCE10003A5FA /* Bootstrap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1D71F95BCD20003A5FA /* Bootstrap.cpp */; };
+		EFB8C1EC1F95BCE10003A5FA /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1E41F95BCD30003A5FA /* common.cpp */; };
+		EFB8C1ED1F95BCE10003A5FA /* h5utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1D41F95BCD20003A5FA /* h5utils.cpp */; };
+		EFB8C1EE1F95BCE10003A5FA /* H5Writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1EA1F95BCD40003A5FA /* H5Writer.cpp */; };
+		EFB8C1EF1F95BCE10003A5FA /* hash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1CD1F95BCD20003A5FA /* hash.cpp */; };
+		EFB8C1F01F95BCE10003A5FA /* Kmer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1D81F95BCD20003A5FA /* Kmer.cpp */; };
+		EFB8C1F11F95BCE10003A5FA /* KmerIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1CA1F95BCD20003A5FA /* KmerIndex.cpp */; };
+		EFB8C1F21F95BCE10003A5FA /* KmerIterator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1D31F95BCD20003A5FA /* KmerIterator.cpp */; };
+		EFB8C1F31F95BCE10003A5FA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1E61F95BCD40003A5FA /* main.cpp */; };
+		EFB8C1F41F95BCE10003A5FA /* MinCollector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1D01F95BCD20003A5FA /* MinCollector.cpp */; };
+		EFB8C1F51F95BCE10003A5FA /* PlaintextWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1E11F95BCD30003A5FA /* PlaintextWriter.cpp */; };
+		EFB8C1F61F95BCE10003A5FA /* ProcessReads.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1D61F95BCD20003A5FA /* ProcessReads.cpp */; };
+		EFB8C1F71F95BCE10003A5FA /* PseudoBam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1D11F95BCD20003A5FA /* PseudoBam.cpp */; };
+		EFB8C1F81F95BCE10003A5FA /* weights.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1D21F95BCD20003A5FA /* weights.cpp */; };
+		EFB8C1FB1F95C2990003A5FA /* libhdf5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB8C1FA1F95C2990003A5FA /* libhdf5.a */; };
+		EFB8C1FD1F95C2E60003A5FA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB8C1FC1F95C2E60003A5FA /* libz.tbd */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EFB8C1BD1F95BCBC0003A5FA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EFB8C1BF1F95BCBC0003A5FA /* Kallisto */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Kallisto; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFB8C1C91F95BCD20003A5FA /* Inspect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Inspect.h; path = ../../src/Inspect.h; sourceTree = "<group>"; };
+		EFB8C1CA1F95BCD20003A5FA /* KmerIndex.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = KmerIndex.cpp; path = ../../src/KmerIndex.cpp; sourceTree = "<group>"; };
+		EFB8C1CB1F95BCD20003A5FA /* h5utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = h5utils.h; path = ../../src/h5utils.h; sourceTree = "<group>"; };
+		EFB8C1CC1F95BCD20003A5FA /* KmerIterator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = KmerIterator.hpp; path = ../../src/KmerIterator.hpp; sourceTree = "<group>"; };
+		EFB8C1CD1F95BCD20003A5FA /* hash.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = hash.cpp; path = ../../src/hash.cpp; sourceTree = "<group>"; };
+		EFB8C1CE1F95BCD20003A5FA /* H5Writer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = H5Writer.h; path = ../../src/H5Writer.h; sourceTree = "<group>"; };
+		EFB8C1CF1F95BCD20003A5FA /* Kmer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Kmer.hpp; path = ../../src/Kmer.hpp; sourceTree = "<group>"; };
+		EFB8C1D01F95BCD20003A5FA /* MinCollector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MinCollector.cpp; path = ../../src/MinCollector.cpp; sourceTree = "<group>"; };
+		EFB8C1D11F95BCD20003A5FA /* PseudoBam.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PseudoBam.cpp; path = ../../src/PseudoBam.cpp; sourceTree = "<group>"; };
+		EFB8C1D21F95BCD20003A5FA /* weights.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = weights.cpp; path = ../../src/weights.cpp; sourceTree = "<group>"; };
+		EFB8C1D31F95BCD20003A5FA /* KmerIterator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = KmerIterator.cpp; path = ../../src/KmerIterator.cpp; sourceTree = "<group>"; };
+		EFB8C1D41F95BCD20003A5FA /* h5utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = h5utils.cpp; path = ../../src/h5utils.cpp; sourceTree = "<group>"; };
+		EFB8C1D51F95BCD20003A5FA /* MinCollector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MinCollector.h; path = ../../src/MinCollector.h; sourceTree = "<group>"; };
+		EFB8C1D61F95BCD20003A5FA /* ProcessReads.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ProcessReads.cpp; path = ../../src/ProcessReads.cpp; sourceTree = "<group>"; };
+		EFB8C1D71F95BCD20003A5FA /* Bootstrap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Bootstrap.cpp; path = ../../src/Bootstrap.cpp; sourceTree = "<group>"; };
+		EFB8C1D81F95BCD20003A5FA /* Kmer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Kmer.cpp; path = ../../src/Kmer.cpp; sourceTree = "<group>"; };
+		EFB8C1D91F95BCD20003A5FA /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = common.h; path = ../../src/common.h; sourceTree = "<group>"; };
+		EFB8C1DA1F95BCD20003A5FA /* PseudoBam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PseudoBam.h; path = ../../src/PseudoBam.h; sourceTree = "<group>"; };
+		EFB8C1DB1F95BCD20003A5FA /* Fusion.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Fusion.hpp; path = ../../src/Fusion.hpp; sourceTree = "<group>"; };
+		EFB8C1DC1F95BCD20003A5FA /* KmerHashTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KmerHashTable.h; path = ../../src/KmerHashTable.h; sourceTree = "<group>"; };
+		EFB8C1DD1F95BCD30003A5FA /* KmerIndex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KmerIndex.h; path = ../../src/KmerIndex.h; sourceTree = "<group>"; };
+		EFB8C1DE1F95BCD30003A5FA /* Multinomial.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Multinomial.hpp; path = ../../src/Multinomial.hpp; sourceTree = "<group>"; };
+		EFB8C1DF1F95BCD30003A5FA /* weights.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = weights.h; path = ../../src/weights.h; sourceTree = "<group>"; };
+		EFB8C1E01F95BCD30003A5FA /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = CMakeLists.txt; path = ../../src/CMakeLists.txt; sourceTree = "<group>"; };
+		EFB8C1E11F95BCD30003A5FA /* PlaintextWriter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PlaintextWriter.cpp; path = ../../src/PlaintextWriter.cpp; sourceTree = "<group>"; };
+		EFB8C1E21F95BCD30003A5FA /* EMAlgorithm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EMAlgorithm.h; path = ../../src/EMAlgorithm.h; sourceTree = "<group>"; };
+		EFB8C1E31F95BCD30003A5FA /* ProcessReads.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProcessReads.h; path = ../../src/ProcessReads.h; sourceTree = "<group>"; };
+		EFB8C1E41F95BCD30003A5FA /* common.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = common.cpp; path = ../../src/common.cpp; sourceTree = "<group>"; };
+		EFB8C1E51F95BCD30003A5FA /* kseq.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = kseq.h; path = ../../src/kseq.h; sourceTree = "<group>"; };
+		EFB8C1E61F95BCD40003A5FA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../src/main.cpp; sourceTree = "<group>"; };
+		EFB8C1E71F95BCD40003A5FA /* Bootstrap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Bootstrap.h; path = ../../src/Bootstrap.h; sourceTree = "<group>"; };
+		EFB8C1E81F95BCD40003A5FA /* hash.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = hash.hpp; path = ../../src/hash.hpp; sourceTree = "<group>"; };
+		EFB8C1E91F95BCD40003A5FA /* PlaintextWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlaintextWriter.h; path = ../../src/PlaintextWriter.h; sourceTree = "<group>"; };
+		EFB8C1EA1F95BCD40003A5FA /* H5Writer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = H5Writer.cpp; path = ../../src/H5Writer.cpp; sourceTree = "<group>"; };
+		EFB8C1FA1F95C2990003A5FA /* libhdf5.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libhdf5.a; path = ../libhdf5.a; sourceTree = "<group>"; };
+		EFB8C1FC1F95C2E60003A5FA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EFB8C1BC1F95BCBC0003A5FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFB8C1FD1F95C2E60003A5FA /* libz.tbd in Frameworks */,
+				EFB8C1FB1F95C2990003A5FA /* libhdf5.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EFB8C1B61F95BCBC0003A5FA = {
+			isa = PBXGroup;
+			children = (
+				EFB8C1C11F95BCBC0003A5FA /* Kallisto */,
+				EFB8C1C01F95BCBC0003A5FA /* Products */,
+				EFB8C1F91F95C2990003A5FA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EFB8C1C01F95BCBC0003A5FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EFB8C1BF1F95BCBC0003A5FA /* Kallisto */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EFB8C1C11F95BCBC0003A5FA /* Kallisto */ = {
+			isa = PBXGroup;
+			children = (
+				EFB8C1D71F95BCD20003A5FA /* Bootstrap.cpp */,
+				EFB8C1E41F95BCD30003A5FA /* common.cpp */,
+				EFB8C1D41F95BCD20003A5FA /* h5utils.cpp */,
+				EFB8C1EA1F95BCD40003A5FA /* H5Writer.cpp */,
+				EFB8C1CD1F95BCD20003A5FA /* hash.cpp */,
+				EFB8C1D81F95BCD20003A5FA /* Kmer.cpp */,
+				EFB8C1CA1F95BCD20003A5FA /* KmerIndex.cpp */,
+				EFB8C1D31F95BCD20003A5FA /* KmerIterator.cpp */,
+				EFB8C1E61F95BCD40003A5FA /* main.cpp */,
+				EFB8C1D01F95BCD20003A5FA /* MinCollector.cpp */,
+				EFB8C1E11F95BCD30003A5FA /* PlaintextWriter.cpp */,
+				EFB8C1D61F95BCD20003A5FA /* ProcessReads.cpp */,
+				EFB8C1D11F95BCD20003A5FA /* PseudoBam.cpp */,
+				EFB8C1D21F95BCD20003A5FA /* weights.cpp */,
+				EFB8C1E71F95BCD40003A5FA /* Bootstrap.h */,
+				EFB8C1D91F95BCD20003A5FA /* common.h */,
+				EFB8C1E21F95BCD30003A5FA /* EMAlgorithm.h */,
+				EFB8C1CB1F95BCD20003A5FA /* h5utils.h */,
+				EFB8C1CE1F95BCD20003A5FA /* H5Writer.h */,
+				EFB8C1C91F95BCD20003A5FA /* Inspect.h */,
+				EFB8C1DC1F95BCD20003A5FA /* KmerHashTable.h */,
+				EFB8C1DD1F95BCD30003A5FA /* KmerIndex.h */,
+				EFB8C1E51F95BCD30003A5FA /* kseq.h */,
+				EFB8C1D51F95BCD20003A5FA /* MinCollector.h */,
+				EFB8C1E91F95BCD40003A5FA /* PlaintextWriter.h */,
+				EFB8C1E31F95BCD30003A5FA /* ProcessReads.h */,
+				EFB8C1DA1F95BCD20003A5FA /* PseudoBam.h */,
+				EFB8C1DF1F95BCD30003A5FA /* weights.h */,
+				EFB8C1DB1F95BCD20003A5FA /* Fusion.hpp */,
+				EFB8C1E81F95BCD40003A5FA /* hash.hpp */,
+				EFB8C1CF1F95BCD20003A5FA /* Kmer.hpp */,
+				EFB8C1CC1F95BCD20003A5FA /* KmerIterator.hpp */,
+				EFB8C1DE1F95BCD30003A5FA /* Multinomial.hpp */,
+				EFB8C1E01F95BCD30003A5FA /* CMakeLists.txt */,
+			);
+			path = Kallisto;
+			sourceTree = "<group>";
+		};
+		EFB8C1F91F95C2990003A5FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFB8C1FC1F95C2E60003A5FA /* libz.tbd */,
+				EFB8C1FA1F95C2990003A5FA /* libhdf5.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EFB8C1BE1F95BCBC0003A5FA /* Kallisto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFB8C1C61F95BCBC0003A5FA /* Build configuration list for PBXNativeTarget "Kallisto" */;
+			buildPhases = (
+				EFB8C1BB1F95BCBC0003A5FA /* Sources */,
+				EFB8C1BC1F95BCBC0003A5FA /* Frameworks */,
+				EFB8C1BD1F95BCBC0003A5FA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kallisto;
+			productName = Kallisto;
+			productReference = EFB8C1BF1F95BCBC0003A5FA /* Kallisto */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EFB8C1B71F95BCBC0003A5FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Ted Wong";
+				TargetAttributes = {
+					EFB8C1BE1F95BCBC0003A5FA = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EFB8C1BA1F95BCBC0003A5FA /* Build configuration list for PBXProject "Kallisto" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EFB8C1B61F95BCBC0003A5FA;
+			productRefGroup = EFB8C1C01F95BCBC0003A5FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EFB8C1BE1F95BCBC0003A5FA /* Kallisto */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EFB8C1BB1F95BCBC0003A5FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFB8C1F01F95BCE10003A5FA /* Kmer.cpp in Sources */,
+				EFB8C1EC1F95BCE10003A5FA /* common.cpp in Sources */,
+				EFB8C1F41F95BCE10003A5FA /* MinCollector.cpp in Sources */,
+				EFB8C1F61F95BCE10003A5FA /* ProcessReads.cpp in Sources */,
+				EFB8C1F31F95BCE10003A5FA /* main.cpp in Sources */,
+				EFB8C1F21F95BCE10003A5FA /* KmerIterator.cpp in Sources */,
+				EFB8C1EB1F95BCE10003A5FA /* Bootstrap.cpp in Sources */,
+				EFB8C1F51F95BCE10003A5FA /* PlaintextWriter.cpp in Sources */,
+				EFB8C1ED1F95BCE10003A5FA /* h5utils.cpp in Sources */,
+				EFB8C1EF1F95BCE10003A5FA /* hash.cpp in Sources */,
+				EFB8C1EE1F95BCE10003A5FA /* H5Writer.cpp in Sources */,
+				EFB8C1F71F95BCE10003A5FA /* PseudoBam.cpp in Sources */,
+				EFB8C1F11F95BCE10003A5FA /* KmerIndex.cpp in Sources */,
+				EFB8C1F81F95BCE10003A5FA /* weights.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EFB8C1C41F95BCBC0003A5FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EFB8C1C51F95BCBC0003A5FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EFB8C1C71F95BCBC0003A5FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MLQ27XKV79;
+				HEADER_SEARCH_PATHS = /usr/local/Cellar/hdf5/1.8.16_1/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/hdf5/1.8.16_1/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EFB8C1C81F95BCBC0003A5FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MLQ27XKV79;
+				HEADER_SEARCH_PATHS = /usr/local/Cellar/hdf5/1.8.16_1/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/hdf5/1.8.16_1/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EFB8C1BA1F95BCBC0003A5FA /* Build configuration list for PBXProject "Kallisto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFB8C1C41F95BCBC0003A5FA /* Debug */,
+				EFB8C1C51F95BCBC0003A5FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFB8C1C61F95BCBC0003A5FA /* Build configuration list for PBXNativeTarget "Kallisto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFB8C1C71F95BCBC0003A5FA /* Debug */,
+				EFB8C1C81F95BCBC0003A5FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EFB8C1B71F95BCBC0003A5FA /* Project object */;
+}
