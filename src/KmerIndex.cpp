@@ -1082,7 +1082,13 @@ void KmerIndex::match(const char *s, int l, std::vector<std::pair<KmerEntry, int
          * We can manually process the k-mers for now...
          */
         
+        std::cout << "Reading sequinsKmers.txt" << std::endl;
         std::ifstream r("sequinsKmers.txt");
+        
+        if (!r.good())
+        {
+            throw "sequinsKmers.txt is missing";
+        }
         
         std::string line;
         while (std::getline(r, line))
@@ -1116,8 +1122,8 @@ void KmerIndex::match(const char *s, int l, std::vector<std::pair<KmerEntry, int
         
         if (__seqs__.count(b))
         {
-            std::cout << b << std::endl;
-            std::cout << 1 << std::endl;
+//            std::cout << b << std::endl;
+//            std::cout << 1 << std::endl;
         }
     }
     
