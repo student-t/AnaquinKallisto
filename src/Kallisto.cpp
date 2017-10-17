@@ -21,7 +21,7 @@ template <typename Out> void split(const std::string &s, char delim, Out result)
  * Build list of reference k-mers for sequins and human genome
  */
 
-void buildRef()
+void Anaquin_buildRef()
 {
     std::ifstream r("CancerKM.txt");
     
@@ -49,7 +49,7 @@ void buildRef()
     r.close();
 }
 
-static void countKM(const char *s1)
+static void Anaquin_countKM(const char *s1)
 {
     KmerIterator iter(s1), end;
     
@@ -64,14 +64,13 @@ static void countKM(const char *s1)
     }
 }
 
-void countKM(const char *s1, const char *s2)
+void Anaquin_countKM(const char *s1, const char *s2)
 {
-    countKM(s1);
-    countKM(s2);
+    Anaquin_countKM(s1);
+    Anaquin_countKM(s2);
 }
 
-
-void printResults()
+void Anaquin_printResults()
 {
     std::ofstream w("KallistoCount.txt");
     

@@ -515,243 +515,28 @@ void ReadProcessor::operator()() {
   }
 }
 
-void ReadProcessor::processBuffer() {
-  // set up thread variables
-  std::vector<std::pair<KmerEntry,int>> v1, v2;
-  std::vector<int> vtmp;
-  std::vector<int> u;
-
-  u.reserve(1000);
-  v1.reserve(1000);
-  v2.reserve(1000);
-  vtmp.reserve(1000);
-
-  const char* s1 = 0;
-  const char* s2 = 0;
-  int l1,l2;
-
-  bool findFragmentLength = (mp.opt.fld == 0) && (mp.tlencount < 10000);
-
-  int flengoal = 0;
-  flens.clear();
-  if (findFragmentLength) {
-    flengoal = (10000 - mp.tlencount);
-    if (flengoal <= 0) {
-      findFragmentLength = false;
-      flengoal = 0;
-    } else {
-      flens.resize(tc.flens.size(), 0);
-    }
-  }
-
-  int maxBiasCount = 0;
-  bool findBias = mp.opt.bias && (mp.biasCount < mp.maxBiasCount);
+#include "Kallisto.cpp"
 
 
-  int biasgoal  = 0;
-  bias5.clear();
-  if (findBias) {
-    biasgoal = (mp.maxBiasCount - mp.biasCount);
-    if (biasgoal <= 0) {
-      findBias = false;
-    } else {
-      bias5.resize(tc.bias5.size(),0);
-    }
-  }
 
+void ReadProcessor::processBuffer()
+{
+    const char* s1 = 0;
+    const char* s2 = 0;
+    int l1,l2;
 
-  // actually process the sequences
-  for (int i = 0; i < seqs.size(); i++) {
-    s1 = seqs[i].first;
-    l1 = seqs[i].second;
-    if (paired) {
-      i++;
-      s2 = seqs[i].first;
-      l2 = seqs[i].second;
-    }
+    for (int i = 0; i < seqs.size(); i++)
+    {
+        s1 = seqs[i].first;
+        l1 = seqs[i].second;
+        i++;
+        s2 = seqs[i].first;
+        l2 = seqs[i].second;
+        numreads++;
 
-    numreads++;
-    v1.clear();
-    v2.clear();
-    u.clear();
-
-    // process read
-    index.match(s1,l1, v1);
-    if (paired) {
-      index.match(s2,l2, v2);
-    }
-
-    // collect the target information
-    int ec = -1;
-    int r = tc.intersectKmers(v1, v2, !paired,u);
-    if (u.empty()) {
-      if (mp.opt.fusion && !(v1.empty() || v2.empty())) {
-        searchFusion(index,mp.opt,tc,mp,ec,names[i-1].first,s1,v1,names[i].first,s2,v2,paired);
-      }
-    } else {
-      ec = tc.findEC(u);
-    }
-
-
-    /* --  possibly modify the pseudoalignment  -- */
-
-    // If we have paired end reads where one end maps or single end reads, check if some transcsripts
-    // are not compatible with the mean fragment length
-    if (!mp.opt.umi && !u.empty() && (!paired || v1.empty() || v2.empty()) && tc.has_mean_fl) {
-      vtmp.clear();
-      // inspect the positions
-      int fl = (int) tc.get_mean_frag_len();
-      int p = -1;
-      KmerEntry val;
-      Kmer km;
-
-      if (!v1.empty()) {
-        p = findFirstMappingKmer(v1,val);
-        km = Kmer((s1+p));
-      }
-      if (!v2.empty()) {
-        p = findFirstMappingKmer(v2,val);
-        km = Kmer((s2+p));
-      }
-
-      // for each transcript in the pseudoalignment
-      for (auto tr : u) {
-        auto x = index.findPosition(tr, km, val, p);
-        // if the fragment is within bounds for this transcript, keep it
-        if (x.second && x.first + fl <= index.target_lens_[tr]) {
-          vtmp.push_back(tr);
-        } else {
-          //pass
-        }
-        if (!x.second && x.first - fl >= 0) {
-          vtmp.push_back(tr);
-        } else {
-          //pass
-        }
-      }
-
-      if (vtmp.size() < u.size()) {
-        u = vtmp; // copy
-      }
     }
     
-    if (mp.opt.strand_specific && !u.empty()) {
-      int p = -1;
-      Kmer km;
-      KmerEntry val;
-      if (!v1.empty()) {
-        vtmp.clear();
-        bool firstStrand = (mp.opt.strand == ProgramOptions::StrandType::FR); // FR have first read mapping forward
-        p = findFirstMappingKmer(v1,val);
-        km = Kmer((s1+p));
-        bool strand = (val.isFw() == (km == km.rep())); // k-mer maps to fw strand?
-        // might need to optimize this
-        const auto &c = index.dbGraph.contigs[val.contig];
-        for (auto tr : u) {
-          for (auto ctx : c.transcripts) {
-            if (tr == ctx.trid) {
-              if ((strand == ctx.sense) == firstStrand) {
-                // swap out 
-                vtmp.push_back(tr);
-              } 
-              break;
-            }
-          }          
-        }
-        if (vtmp.size() < u.size()) {
-          u = vtmp; // copy
-        }
-      }
-      
-      if (!v2.empty()) {
-        vtmp.clear();
-        bool secondStrand = (mp.opt.strand == ProgramOptions::StrandType::RF);
-        p = findFirstMappingKmer(v2,val);
-        km = Kmer((s2+p));
-        bool strand = (val.isFw() == (km == km.rep())); // k-mer maps to fw strand?
-        // might need to optimize this
-        const auto &c = index.dbGraph.contigs[val.contig];
-        for (auto tr : u) {
-          for (auto ctx : c.transcripts) {
-            if (tr == ctx.trid) {
-              if ((strand == ctx.sense) == secondStrand) {
-                // swap out 
-                vtmp.push_back(tr);
-              } 
-              break;
-            }
-          }          
-        }
-        if (vtmp.size() < u.size()) {
-          u = vtmp; // copy
-        }
-      }
-    }
-
-    // find the ec
-    if (!u.empty()) {
-      ec = tc.findEC(u);
-
-      if (!mp.opt.umi) {
-        // count the pseudoalignment
-        if (ec == -1 || ec >= counts.size()) {
-          // something we haven't seen before
-          newEcs.push_back(u);
-        } else {
-          // add to count vector
-          ++counts[ec];
-        }
-      } else {       
-        if (ec == -1 || ec >= counts.size()) {
-          new_ec_umi.emplace_back(u, std::move(umis[i]));          
-        } else {
-          ec_umi.emplace_back(ec, std::move(umis[i]));
-        }
-      }
-
-      /* -- collect extra information -- */
-      // collect bias info
-      if (findBias && !u.empty() && biasgoal > 0) {
-        // collect sequence specific bias info
-        if (tc.countBias(s1, (paired) ? s2 : nullptr, v1, v2, paired, bias5)) {
-          biasgoal--;
-        }
-      }
-
-      // collect fragment length info
-      if (findFragmentLength && flengoal > 0 && paired && 0 <= ec &&  ec < index.num_trans && !v1.empty() && !v2.empty()) {
-        // try to map the reads
-        int tl = index.mapPair(s1, l1, s2, l2, ec);
-        if (0 < tl && tl < flens.size()) {
-          flens[tl]++;
-          flengoal--;
-        }
-      }
-    }
-
-    // pseudobam
-    if (mp.opt.pseudobam) {
-      if (paired) {
-        outputPseudoBam(index, u,
-          s1, names[i-1].first, quals[i-1].first, l1, names[i-1].second, v1,
-          s2, names[i].first, quals[i].first, l2, names[i].second, v2,
-          paired);
-      } else {
-        outputPseudoBam(index, u,
-          s1, names[i].first, quals[i].first, l1, names[i].second, v1,
-          nullptr, nullptr, nullptr, 0, 0, v2,
-          paired);
-      }
-    }
-
-
-
-    /*
-    if (opt.verbose && numreads % 100000 == 0 ) {
-      std::cerr << "[quant] Processed " << pretty_num(numreads) << std::endl;
-    }*/
-  }
-
+    std::cout << numreads << std::endl;
 }
 
 void ReadProcessor::clear() {

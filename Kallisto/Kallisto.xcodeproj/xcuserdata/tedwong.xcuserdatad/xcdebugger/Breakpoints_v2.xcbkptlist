@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/KmerIndex.cpp"
-            timestampString = "529933497.378428"
+            timestampString = "529935195.089195"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1078"
@@ -26,7 +26,7 @@
                   moduleName = "Kallisto"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tedwong/Sources/Kallisto/src/KmerIndex.cpp"
-                  timestampString = "529933497.72414"
+                  timestampString = "529935195.417952"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1078"
@@ -41,7 +41,7 @@
                   moduleName = "Kallisto"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tedwong/Sources/Kallisto/src/KmerIndex.cpp"
-                  timestampString = "529933497.72607"
+                  timestampString = "529935195.42106"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1078"
@@ -49,6 +49,38 @@
                   offsetFromSymbolStart = "1423">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/ProcessReads.cpp"
+            timestampString = "529935195.089266"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "ProcessBatchReads(KmerIndex&amp; index, const ProgramOptions&amp; opt, MinCollector&amp; tc, std::vector&lt;std::vector&lt;int&gt;&gt; &amp;batchCounts)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/ProcessReads.cpp"
+            timestampString = "529935195.089616"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "539"
+            endingLineNumber = "539"
+            landmarkName = "ReadProcessor::processBuffer()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

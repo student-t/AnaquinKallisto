@@ -7,21 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EF24301C1F9626D6007C9C73 /* Bootstrap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430081F9626CB007C9C73 /* Bootstrap.cpp */; };
-		EF24301D1F9626D6007C9C73 /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430151F9626CC007C9C73 /* common.cpp */; };
-		EF24301E1F9626D6007C9C73 /* h5utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430051F9626CB007C9C73 /* h5utils.cpp */; };
-		EF24301F1F9626D6007C9C73 /* H5Writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF24301B1F9626CD007C9C73 /* H5Writer.cpp */; };
-		EF2430201F9626D6007C9C73 /* hash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF242FFE1F9626CB007C9C73 /* hash.cpp */; };
-		EF2430211F9626D6007C9C73 /* Kallisto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF24300C1F9626CC007C9C73 /* Kallisto.cpp */; };
-		EF2430221F9626D6007C9C73 /* Kmer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430091F9626CB007C9C73 /* Kmer.cpp */; };
-		EF2430231F9626D6007C9C73 /* KmerIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF242FFB1F9626CB007C9C73 /* KmerIndex.cpp */; };
 		EF2430241F9626D6007C9C73 /* KmerIterator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430041F9626CB007C9C73 /* KmerIterator.cpp */; };
-		EF2430251F9626D6007C9C73 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430171F9626CD007C9C73 /* main.cpp */; };
-		EF2430261F9626D6007C9C73 /* MinCollector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430011F9626CB007C9C73 /* MinCollector.cpp */; };
-		EF2430271F9626D6007C9C73 /* PlaintextWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430121F9626CC007C9C73 /* PlaintextWriter.cpp */; };
-		EF2430281F9626D6007C9C73 /* ProcessReads.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430071F9626CB007C9C73 /* ProcessReads.cpp */; };
-		EF2430291F9626D6007C9C73 /* PseudoBam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430021F9626CB007C9C73 /* PseudoBam.cpp */; };
-		EF24302A1F9626D6007C9C73 /* weights.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430031F9626CB007C9C73 /* weights.cpp */; };
+		EF24302B1F962910007C9C73 /* Kmer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430091F9626CB007C9C73 /* Kmer.cpp */; };
+		EF24302C1F96291C007C9C73 /* h5utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430051F9626CB007C9C73 /* h5utils.cpp */; };
+		EF24302E1F962939007C9C73 /* hash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF242FFE1F9626CB007C9C73 /* hash.cpp */; };
+		EF24302F1F962974007C9C73 /* ProcessReads.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430071F9626CB007C9C73 /* ProcessReads.cpp */; };
+		EF2430301F9629A3007C9C73 /* Bootstrap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430081F9626CB007C9C73 /* Bootstrap.cpp */; };
+		EF2430311F9629A3007C9C73 /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430151F9626CC007C9C73 /* common.cpp */; };
+		EF2430321F9629A3007C9C73 /* H5Writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF24301B1F9626CD007C9C73 /* H5Writer.cpp */; };
+		EF2430331F9629A3007C9C73 /* KmerIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF242FFB1F9626CB007C9C73 /* KmerIndex.cpp */; };
+		EF2430341F9629A3007C9C73 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430171F9626CD007C9C73 /* main.cpp */; };
+		EF2430351F9629A3007C9C73 /* MinCollector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430011F9626CB007C9C73 /* MinCollector.cpp */; };
+		EF2430361F9629A3007C9C73 /* PlaintextWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430121F9626CC007C9C73 /* PlaintextWriter.cpp */; };
+		EF2430371F9629A3007C9C73 /* PseudoBam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430021F9626CB007C9C73 /* PseudoBam.cpp */; };
+		EF2430381F9629A3007C9C73 /* weights.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430031F9626CB007C9C73 /* weights.cpp */; };
 		EFB8C1FB1F95C2990003A5FA /* libhdf5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB8C1FA1F95C2990003A5FA /* libhdf5.a */; };
 		EFB8C1FD1F95C2E60003A5FA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB8C1FC1F95C2E60003A5FA /* libz.tbd */; };
 /* End PBXBuildFile section */
@@ -215,21 +214,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF2430281F9626D6007C9C73 /* ProcessReads.cpp in Sources */,
-				EF24301D1F9626D6007C9C73 /* common.cpp in Sources */,
-				EF24301C1F9626D6007C9C73 /* Bootstrap.cpp in Sources */,
-				EF2430211F9626D6007C9C73 /* Kallisto.cpp in Sources */,
-				EF24301E1F9626D6007C9C73 /* h5utils.cpp in Sources */,
-				EF2430221F9626D6007C9C73 /* Kmer.cpp in Sources */,
-				EF2430231F9626D6007C9C73 /* KmerIndex.cpp in Sources */,
-				EF2430201F9626D6007C9C73 /* hash.cpp in Sources */,
-				EF24302A1F9626D6007C9C73 /* weights.cpp in Sources */,
+				EF2430301F9629A3007C9C73 /* Bootstrap.cpp in Sources */,
+				EF24302B1F962910007C9C73 /* Kmer.cpp in Sources */,
+				EF2430361F9629A3007C9C73 /* PlaintextWriter.cpp in Sources */,
+				EF24302C1F96291C007C9C73 /* h5utils.cpp in Sources */,
+				EF2430351F9629A3007C9C73 /* MinCollector.cpp in Sources */,
+				EF2430341F9629A3007C9C73 /* main.cpp in Sources */,
+				EF2430311F9629A3007C9C73 /* common.cpp in Sources */,
+				EF2430381F9629A3007C9C73 /* weights.cpp in Sources */,
+				EF24302F1F962974007C9C73 /* ProcessReads.cpp in Sources */,
+				EF24302E1F962939007C9C73 /* hash.cpp in Sources */,
 				EF2430241F9626D6007C9C73 /* KmerIterator.cpp in Sources */,
-				EF2430251F9626D6007C9C73 /* main.cpp in Sources */,
-				EF24301F1F9626D6007C9C73 /* H5Writer.cpp in Sources */,
-				EF2430271F9626D6007C9C73 /* PlaintextWriter.cpp in Sources */,
-				EF2430291F9626D6007C9C73 /* PseudoBam.cpp in Sources */,
-				EF2430261F9626D6007C9C73 /* MinCollector.cpp in Sources */,
+				EF2430321F9629A3007C9C73 /* H5Writer.cpp in Sources */,
+				EF2430371F9629A3007C9C73 /* PseudoBam.cpp in Sources */,
+				EF2430331F9629A3007C9C73 /* KmerIndex.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
