@@ -7,20 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EFB8C1EB1F95BCE10003A5FA /* Bootstrap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1D71F95BCD20003A5FA /* Bootstrap.cpp */; };
-		EFB8C1EC1F95BCE10003A5FA /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1E41F95BCD30003A5FA /* common.cpp */; };
-		EFB8C1ED1F95BCE10003A5FA /* h5utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1D41F95BCD20003A5FA /* h5utils.cpp */; };
-		EFB8C1EE1F95BCE10003A5FA /* H5Writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1EA1F95BCD40003A5FA /* H5Writer.cpp */; };
-		EFB8C1EF1F95BCE10003A5FA /* hash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1CD1F95BCD20003A5FA /* hash.cpp */; };
-		EFB8C1F01F95BCE10003A5FA /* Kmer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1D81F95BCD20003A5FA /* Kmer.cpp */; };
-		EFB8C1F11F95BCE10003A5FA /* KmerIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1CA1F95BCD20003A5FA /* KmerIndex.cpp */; };
-		EFB8C1F21F95BCE10003A5FA /* KmerIterator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1D31F95BCD20003A5FA /* KmerIterator.cpp */; };
-		EFB8C1F31F95BCE10003A5FA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1E61F95BCD40003A5FA /* main.cpp */; };
-		EFB8C1F41F95BCE10003A5FA /* MinCollector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1D01F95BCD20003A5FA /* MinCollector.cpp */; };
-		EFB8C1F51F95BCE10003A5FA /* PlaintextWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1E11F95BCD30003A5FA /* PlaintextWriter.cpp */; };
-		EFB8C1F61F95BCE10003A5FA /* ProcessReads.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1D61F95BCD20003A5FA /* ProcessReads.cpp */; };
-		EFB8C1F71F95BCE10003A5FA /* PseudoBam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1D11F95BCD20003A5FA /* PseudoBam.cpp */; };
-		EFB8C1F81F95BCE10003A5FA /* weights.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB8C1D21F95BCD20003A5FA /* weights.cpp */; };
+		EF24301C1F9626D6007C9C73 /* Bootstrap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430081F9626CB007C9C73 /* Bootstrap.cpp */; };
+		EF24301D1F9626D6007C9C73 /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430151F9626CC007C9C73 /* common.cpp */; };
+		EF24301E1F9626D6007C9C73 /* h5utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430051F9626CB007C9C73 /* h5utils.cpp */; };
+		EF24301F1F9626D6007C9C73 /* H5Writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF24301B1F9626CD007C9C73 /* H5Writer.cpp */; };
+		EF2430201F9626D6007C9C73 /* hash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF242FFE1F9626CB007C9C73 /* hash.cpp */; };
+		EF2430211F9626D6007C9C73 /* Kallisto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF24300C1F9626CC007C9C73 /* Kallisto.cpp */; };
+		EF2430221F9626D6007C9C73 /* Kmer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430091F9626CB007C9C73 /* Kmer.cpp */; };
+		EF2430231F9626D6007C9C73 /* KmerIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF242FFB1F9626CB007C9C73 /* KmerIndex.cpp */; };
+		EF2430241F9626D6007C9C73 /* KmerIterator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430041F9626CB007C9C73 /* KmerIterator.cpp */; };
+		EF2430251F9626D6007C9C73 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430171F9626CD007C9C73 /* main.cpp */; };
+		EF2430261F9626D6007C9C73 /* MinCollector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430011F9626CB007C9C73 /* MinCollector.cpp */; };
+		EF2430271F9626D6007C9C73 /* PlaintextWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430121F9626CC007C9C73 /* PlaintextWriter.cpp */; };
+		EF2430281F9626D6007C9C73 /* ProcessReads.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430071F9626CB007C9C73 /* ProcessReads.cpp */; };
+		EF2430291F9626D6007C9C73 /* PseudoBam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430021F9626CB007C9C73 /* PseudoBam.cpp */; };
+		EF24302A1F9626D6007C9C73 /* weights.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF2430031F9626CB007C9C73 /* weights.cpp */; };
 		EFB8C1FB1F95C2990003A5FA /* libhdf5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB8C1FA1F95C2990003A5FA /* libhdf5.a */; };
 		EFB8C1FD1F95C2E60003A5FA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB8C1FC1F95C2E60003A5FA /* libz.tbd */; };
 /* End PBXBuildFile section */
@@ -38,41 +39,41 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EF242FFA1F9626CB007C9C73 /* Inspect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Inspect.h; path = ../../src/Inspect.h; sourceTree = "<group>"; };
+		EF242FFB1F9626CB007C9C73 /* KmerIndex.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = KmerIndex.cpp; path = ../../src/KmerIndex.cpp; sourceTree = "<group>"; };
+		EF242FFC1F9626CB007C9C73 /* h5utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = h5utils.h; path = ../../src/h5utils.h; sourceTree = "<group>"; };
+		EF242FFD1F9626CB007C9C73 /* KmerIterator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = KmerIterator.hpp; path = ../../src/KmerIterator.hpp; sourceTree = "<group>"; };
+		EF242FFE1F9626CB007C9C73 /* hash.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = hash.cpp; path = ../../src/hash.cpp; sourceTree = "<group>"; };
+		EF242FFF1F9626CB007C9C73 /* H5Writer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = H5Writer.h; path = ../../src/H5Writer.h; sourceTree = "<group>"; };
+		EF2430001F9626CB007C9C73 /* Kmer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Kmer.hpp; path = ../../src/Kmer.hpp; sourceTree = "<group>"; };
+		EF2430011F9626CB007C9C73 /* MinCollector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MinCollector.cpp; path = ../../src/MinCollector.cpp; sourceTree = "<group>"; };
+		EF2430021F9626CB007C9C73 /* PseudoBam.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PseudoBam.cpp; path = ../../src/PseudoBam.cpp; sourceTree = "<group>"; };
+		EF2430031F9626CB007C9C73 /* weights.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = weights.cpp; path = ../../src/weights.cpp; sourceTree = "<group>"; };
+		EF2430041F9626CB007C9C73 /* KmerIterator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = KmerIterator.cpp; path = ../../src/KmerIterator.cpp; sourceTree = "<group>"; };
+		EF2430051F9626CB007C9C73 /* h5utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = h5utils.cpp; path = ../../src/h5utils.cpp; sourceTree = "<group>"; };
+		EF2430061F9626CB007C9C73 /* MinCollector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MinCollector.h; path = ../../src/MinCollector.h; sourceTree = "<group>"; };
+		EF2430071F9626CB007C9C73 /* ProcessReads.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ProcessReads.cpp; path = ../../src/ProcessReads.cpp; sourceTree = "<group>"; };
+		EF2430081F9626CB007C9C73 /* Bootstrap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Bootstrap.cpp; path = ../../src/Bootstrap.cpp; sourceTree = "<group>"; };
+		EF2430091F9626CB007C9C73 /* Kmer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Kmer.cpp; path = ../../src/Kmer.cpp; sourceTree = "<group>"; };
+		EF24300A1F9626CB007C9C73 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = common.h; path = ../../src/common.h; sourceTree = "<group>"; };
+		EF24300B1F9626CB007C9C73 /* PseudoBam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PseudoBam.h; path = ../../src/PseudoBam.h; sourceTree = "<group>"; };
+		EF24300C1F9626CC007C9C73 /* Kallisto.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Kallisto.cpp; path = ../../src/Kallisto.cpp; sourceTree = "<group>"; };
+		EF24300D1F9626CC007C9C73 /* Fusion.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Fusion.hpp; path = ../../src/Fusion.hpp; sourceTree = "<group>"; };
+		EF24300E1F9626CC007C9C73 /* KmerHashTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KmerHashTable.h; path = ../../src/KmerHashTable.h; sourceTree = "<group>"; };
+		EF24300F1F9626CC007C9C73 /* KmerIndex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KmerIndex.h; path = ../../src/KmerIndex.h; sourceTree = "<group>"; };
+		EF2430101F9626CC007C9C73 /* Multinomial.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Multinomial.hpp; path = ../../src/Multinomial.hpp; sourceTree = "<group>"; };
+		EF2430111F9626CC007C9C73 /* weights.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = weights.h; path = ../../src/weights.h; sourceTree = "<group>"; };
+		EF2430121F9626CC007C9C73 /* PlaintextWriter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PlaintextWriter.cpp; path = ../../src/PlaintextWriter.cpp; sourceTree = "<group>"; };
+		EF2430131F9626CC007C9C73 /* EMAlgorithm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EMAlgorithm.h; path = ../../src/EMAlgorithm.h; sourceTree = "<group>"; };
+		EF2430141F9626CC007C9C73 /* ProcessReads.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProcessReads.h; path = ../../src/ProcessReads.h; sourceTree = "<group>"; };
+		EF2430151F9626CC007C9C73 /* common.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = common.cpp; path = ../../src/common.cpp; sourceTree = "<group>"; };
+		EF2430161F9626CD007C9C73 /* kseq.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = kseq.h; path = ../../src/kseq.h; sourceTree = "<group>"; };
+		EF2430171F9626CD007C9C73 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../src/main.cpp; sourceTree = "<group>"; };
+		EF2430181F9626CD007C9C73 /* Bootstrap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Bootstrap.h; path = ../../src/Bootstrap.h; sourceTree = "<group>"; };
+		EF2430191F9626CD007C9C73 /* hash.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = hash.hpp; path = ../../src/hash.hpp; sourceTree = "<group>"; };
+		EF24301A1F9626CD007C9C73 /* PlaintextWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlaintextWriter.h; path = ../../src/PlaintextWriter.h; sourceTree = "<group>"; };
+		EF24301B1F9626CD007C9C73 /* H5Writer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = H5Writer.cpp; path = ../../src/H5Writer.cpp; sourceTree = "<group>"; };
 		EFB8C1BF1F95BCBC0003A5FA /* Kallisto */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Kallisto; sourceTree = BUILT_PRODUCTS_DIR; };
-		EFB8C1C91F95BCD20003A5FA /* Inspect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Inspect.h; path = ../../src/Inspect.h; sourceTree = "<group>"; };
-		EFB8C1CA1F95BCD20003A5FA /* KmerIndex.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = KmerIndex.cpp; path = ../../src/KmerIndex.cpp; sourceTree = "<group>"; };
-		EFB8C1CB1F95BCD20003A5FA /* h5utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = h5utils.h; path = ../../src/h5utils.h; sourceTree = "<group>"; };
-		EFB8C1CC1F95BCD20003A5FA /* KmerIterator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = KmerIterator.hpp; path = ../../src/KmerIterator.hpp; sourceTree = "<group>"; };
-		EFB8C1CD1F95BCD20003A5FA /* hash.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = hash.cpp; path = ../../src/hash.cpp; sourceTree = "<group>"; };
-		EFB8C1CE1F95BCD20003A5FA /* H5Writer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = H5Writer.h; path = ../../src/H5Writer.h; sourceTree = "<group>"; };
-		EFB8C1CF1F95BCD20003A5FA /* Kmer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Kmer.hpp; path = ../../src/Kmer.hpp; sourceTree = "<group>"; };
-		EFB8C1D01F95BCD20003A5FA /* MinCollector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MinCollector.cpp; path = ../../src/MinCollector.cpp; sourceTree = "<group>"; };
-		EFB8C1D11F95BCD20003A5FA /* PseudoBam.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PseudoBam.cpp; path = ../../src/PseudoBam.cpp; sourceTree = "<group>"; };
-		EFB8C1D21F95BCD20003A5FA /* weights.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = weights.cpp; path = ../../src/weights.cpp; sourceTree = "<group>"; };
-		EFB8C1D31F95BCD20003A5FA /* KmerIterator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = KmerIterator.cpp; path = ../../src/KmerIterator.cpp; sourceTree = "<group>"; };
-		EFB8C1D41F95BCD20003A5FA /* h5utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = h5utils.cpp; path = ../../src/h5utils.cpp; sourceTree = "<group>"; };
-		EFB8C1D51F95BCD20003A5FA /* MinCollector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MinCollector.h; path = ../../src/MinCollector.h; sourceTree = "<group>"; };
-		EFB8C1D61F95BCD20003A5FA /* ProcessReads.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ProcessReads.cpp; path = ../../src/ProcessReads.cpp; sourceTree = "<group>"; };
-		EFB8C1D71F95BCD20003A5FA /* Bootstrap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Bootstrap.cpp; path = ../../src/Bootstrap.cpp; sourceTree = "<group>"; };
-		EFB8C1D81F95BCD20003A5FA /* Kmer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Kmer.cpp; path = ../../src/Kmer.cpp; sourceTree = "<group>"; };
-		EFB8C1D91F95BCD20003A5FA /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = common.h; path = ../../src/common.h; sourceTree = "<group>"; };
-		EFB8C1DA1F95BCD20003A5FA /* PseudoBam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PseudoBam.h; path = ../../src/PseudoBam.h; sourceTree = "<group>"; };
-		EFB8C1DB1F95BCD20003A5FA /* Fusion.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Fusion.hpp; path = ../../src/Fusion.hpp; sourceTree = "<group>"; };
-		EFB8C1DC1F95BCD20003A5FA /* KmerHashTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KmerHashTable.h; path = ../../src/KmerHashTable.h; sourceTree = "<group>"; };
-		EFB8C1DD1F95BCD30003A5FA /* KmerIndex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KmerIndex.h; path = ../../src/KmerIndex.h; sourceTree = "<group>"; };
-		EFB8C1DE1F95BCD30003A5FA /* Multinomial.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Multinomial.hpp; path = ../../src/Multinomial.hpp; sourceTree = "<group>"; };
-		EFB8C1DF1F95BCD30003A5FA /* weights.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = weights.h; path = ../../src/weights.h; sourceTree = "<group>"; };
-		EFB8C1E01F95BCD30003A5FA /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = CMakeLists.txt; path = ../../src/CMakeLists.txt; sourceTree = "<group>"; };
-		EFB8C1E11F95BCD30003A5FA /* PlaintextWriter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PlaintextWriter.cpp; path = ../../src/PlaintextWriter.cpp; sourceTree = "<group>"; };
-		EFB8C1E21F95BCD30003A5FA /* EMAlgorithm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EMAlgorithm.h; path = ../../src/EMAlgorithm.h; sourceTree = "<group>"; };
-		EFB8C1E31F95BCD30003A5FA /* ProcessReads.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProcessReads.h; path = ../../src/ProcessReads.h; sourceTree = "<group>"; };
-		EFB8C1E41F95BCD30003A5FA /* common.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = common.cpp; path = ../../src/common.cpp; sourceTree = "<group>"; };
-		EFB8C1E51F95BCD30003A5FA /* kseq.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = kseq.h; path = ../../src/kseq.h; sourceTree = "<group>"; };
-		EFB8C1E61F95BCD40003A5FA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../src/main.cpp; sourceTree = "<group>"; };
-		EFB8C1E71F95BCD40003A5FA /* Bootstrap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Bootstrap.h; path = ../../src/Bootstrap.h; sourceTree = "<group>"; };
-		EFB8C1E81F95BCD40003A5FA /* hash.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = hash.hpp; path = ../../src/hash.hpp; sourceTree = "<group>"; };
-		EFB8C1E91F95BCD40003A5FA /* PlaintextWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlaintextWriter.h; path = ../../src/PlaintextWriter.h; sourceTree = "<group>"; };
-		EFB8C1EA1F95BCD40003A5FA /* H5Writer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = H5Writer.cpp; path = ../../src/H5Writer.cpp; sourceTree = "<group>"; };
 		EFB8C1FA1F95C2990003A5FA /* libhdf5.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libhdf5.a; path = ../libhdf5.a; sourceTree = "<group>"; };
 		EFB8C1FC1F95C2E60003A5FA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -90,10 +91,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF242FF91F9626BA007C9C73 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				EF2430081F9626CB007C9C73 /* Bootstrap.cpp */,
+				EF2430151F9626CC007C9C73 /* common.cpp */,
+				EF2430051F9626CB007C9C73 /* h5utils.cpp */,
+				EF24301B1F9626CD007C9C73 /* H5Writer.cpp */,
+				EF242FFE1F9626CB007C9C73 /* hash.cpp */,
+				EF24300C1F9626CC007C9C73 /* Kallisto.cpp */,
+				EF2430091F9626CB007C9C73 /* Kmer.cpp */,
+				EF242FFB1F9626CB007C9C73 /* KmerIndex.cpp */,
+				EF2430041F9626CB007C9C73 /* KmerIterator.cpp */,
+				EF2430171F9626CD007C9C73 /* main.cpp */,
+				EF2430011F9626CB007C9C73 /* MinCollector.cpp */,
+				EF2430121F9626CC007C9C73 /* PlaintextWriter.cpp */,
+				EF2430071F9626CB007C9C73 /* ProcessReads.cpp */,
+				EF2430021F9626CB007C9C73 /* PseudoBam.cpp */,
+				EF2430031F9626CB007C9C73 /* weights.cpp */,
+				EF2430181F9626CD007C9C73 /* Bootstrap.h */,
+				EF24300A1F9626CB007C9C73 /* common.h */,
+				EF2430131F9626CC007C9C73 /* EMAlgorithm.h */,
+				EF242FFC1F9626CB007C9C73 /* h5utils.h */,
+				EF242FFF1F9626CB007C9C73 /* H5Writer.h */,
+				EF242FFA1F9626CB007C9C73 /* Inspect.h */,
+				EF24300E1F9626CC007C9C73 /* KmerHashTable.h */,
+				EF24300F1F9626CC007C9C73 /* KmerIndex.h */,
+				EF2430161F9626CD007C9C73 /* kseq.h */,
+				EF2430061F9626CB007C9C73 /* MinCollector.h */,
+				EF24301A1F9626CD007C9C73 /* PlaintextWriter.h */,
+				EF2430141F9626CC007C9C73 /* ProcessReads.h */,
+				EF24300B1F9626CB007C9C73 /* PseudoBam.h */,
+				EF2430111F9626CC007C9C73 /* weights.h */,
+				EF24300D1F9626CC007C9C73 /* Fusion.hpp */,
+				EF2430191F9626CD007C9C73 /* hash.hpp */,
+				EF2430001F9626CB007C9C73 /* Kmer.hpp */,
+				EF242FFD1F9626CB007C9C73 /* KmerIterator.hpp */,
+				EF2430101F9626CC007C9C73 /* Multinomial.hpp */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		EFB8C1B61F95BCBC0003A5FA = {
 			isa = PBXGroup;
 			children = (
-				EFB8C1C11F95BCBC0003A5FA /* Kallisto */,
+				EF242FF91F9626BA007C9C73 /* Sources */,
 				EFB8C1C01F95BCBC0003A5FA /* Products */,
 				EFB8C1F91F95C2990003A5FA /* Frameworks */,
 			);
@@ -105,47 +147,6 @@
 				EFB8C1BF1F95BCBC0003A5FA /* Kallisto */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		EFB8C1C11F95BCBC0003A5FA /* Kallisto */ = {
-			isa = PBXGroup;
-			children = (
-				EFB8C1D71F95BCD20003A5FA /* Bootstrap.cpp */,
-				EFB8C1E41F95BCD30003A5FA /* common.cpp */,
-				EFB8C1D41F95BCD20003A5FA /* h5utils.cpp */,
-				EFB8C1EA1F95BCD40003A5FA /* H5Writer.cpp */,
-				EFB8C1CD1F95BCD20003A5FA /* hash.cpp */,
-				EFB8C1D81F95BCD20003A5FA /* Kmer.cpp */,
-				EFB8C1CA1F95BCD20003A5FA /* KmerIndex.cpp */,
-				EFB8C1D31F95BCD20003A5FA /* KmerIterator.cpp */,
-				EFB8C1E61F95BCD40003A5FA /* main.cpp */,
-				EFB8C1D01F95BCD20003A5FA /* MinCollector.cpp */,
-				EFB8C1E11F95BCD30003A5FA /* PlaintextWriter.cpp */,
-				EFB8C1D61F95BCD20003A5FA /* ProcessReads.cpp */,
-				EFB8C1D11F95BCD20003A5FA /* PseudoBam.cpp */,
-				EFB8C1D21F95BCD20003A5FA /* weights.cpp */,
-				EFB8C1E71F95BCD40003A5FA /* Bootstrap.h */,
-				EFB8C1D91F95BCD20003A5FA /* common.h */,
-				EFB8C1E21F95BCD30003A5FA /* EMAlgorithm.h */,
-				EFB8C1CB1F95BCD20003A5FA /* h5utils.h */,
-				EFB8C1CE1F95BCD20003A5FA /* H5Writer.h */,
-				EFB8C1C91F95BCD20003A5FA /* Inspect.h */,
-				EFB8C1DC1F95BCD20003A5FA /* KmerHashTable.h */,
-				EFB8C1DD1F95BCD30003A5FA /* KmerIndex.h */,
-				EFB8C1E51F95BCD30003A5FA /* kseq.h */,
-				EFB8C1D51F95BCD20003A5FA /* MinCollector.h */,
-				EFB8C1E91F95BCD40003A5FA /* PlaintextWriter.h */,
-				EFB8C1E31F95BCD30003A5FA /* ProcessReads.h */,
-				EFB8C1DA1F95BCD20003A5FA /* PseudoBam.h */,
-				EFB8C1DF1F95BCD30003A5FA /* weights.h */,
-				EFB8C1DB1F95BCD20003A5FA /* Fusion.hpp */,
-				EFB8C1E81F95BCD40003A5FA /* hash.hpp */,
-				EFB8C1CF1F95BCD20003A5FA /* Kmer.hpp */,
-				EFB8C1CC1F95BCD20003A5FA /* KmerIterator.hpp */,
-				EFB8C1DE1F95BCD30003A5FA /* Multinomial.hpp */,
-				EFB8C1E01F95BCD30003A5FA /* CMakeLists.txt */,
-			);
-			path = Kallisto;
 			sourceTree = "<group>";
 		};
 		EFB8C1F91F95C2990003A5FA /* Frameworks */ = {
@@ -214,20 +215,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFB8C1F01F95BCE10003A5FA /* Kmer.cpp in Sources */,
-				EFB8C1EC1F95BCE10003A5FA /* common.cpp in Sources */,
-				EFB8C1F41F95BCE10003A5FA /* MinCollector.cpp in Sources */,
-				EFB8C1F61F95BCE10003A5FA /* ProcessReads.cpp in Sources */,
-				EFB8C1F31F95BCE10003A5FA /* main.cpp in Sources */,
-				EFB8C1F21F95BCE10003A5FA /* KmerIterator.cpp in Sources */,
-				EFB8C1EB1F95BCE10003A5FA /* Bootstrap.cpp in Sources */,
-				EFB8C1F51F95BCE10003A5FA /* PlaintextWriter.cpp in Sources */,
-				EFB8C1ED1F95BCE10003A5FA /* h5utils.cpp in Sources */,
-				EFB8C1EF1F95BCE10003A5FA /* hash.cpp in Sources */,
-				EFB8C1EE1F95BCE10003A5FA /* H5Writer.cpp in Sources */,
-				EFB8C1F71F95BCE10003A5FA /* PseudoBam.cpp in Sources */,
-				EFB8C1F11F95BCE10003A5FA /* KmerIndex.cpp in Sources */,
-				EFB8C1F81F95BCE10003A5FA /* weights.cpp in Sources */,
+				EF2430281F9626D6007C9C73 /* ProcessReads.cpp in Sources */,
+				EF24301D1F9626D6007C9C73 /* common.cpp in Sources */,
+				EF24301C1F9626D6007C9C73 /* Bootstrap.cpp in Sources */,
+				EF2430211F9626D6007C9C73 /* Kallisto.cpp in Sources */,
+				EF24301E1F9626D6007C9C73 /* h5utils.cpp in Sources */,
+				EF2430221F9626D6007C9C73 /* Kmer.cpp in Sources */,
+				EF2430231F9626D6007C9C73 /* KmerIndex.cpp in Sources */,
+				EF2430201F9626D6007C9C73 /* hash.cpp in Sources */,
+				EF24302A1F9626D6007C9C73 /* weights.cpp in Sources */,
+				EF2430241F9626D6007C9C73 /* KmerIterator.cpp in Sources */,
+				EF2430251F9626D6007C9C73 /* main.cpp in Sources */,
+				EF24301F1F9626D6007C9C73 /* H5Writer.cpp in Sources */,
+				EF2430271F9626D6007C9C73 /* PlaintextWriter.cpp in Sources */,
+				EF2430291F9626D6007C9C73 /* PseudoBam.cpp in Sources */,
+				EF2430261F9626D6007C9C73 /* MinCollector.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
