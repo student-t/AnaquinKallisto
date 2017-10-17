@@ -145,14 +145,6 @@ int ProcessReads(KmerIndex& index, const ProgramOptions& opt, MinCollector& tc) 
   size_t nummapped = 0;
   bool paired = !opt.single_end;
 
-  /*
-  std::vector<std::pair<KmerEntry,int>> v1, v2;
-  v1.reserve(1000);
-  v2.reserve(1000);
-  */
-
-
-
   if (paired) {
     std::cerr << "[quant] running in paired-end mode" << std::endl;
   } else {
