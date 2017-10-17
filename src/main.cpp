@@ -1415,5 +1415,8 @@ int main(int argc, char *argv[]) {
 
   fflush(stdout);
 
+    extern void collectAnaquinResults();
+    collectAnaquinResults();
+    
   return 0;
 }
