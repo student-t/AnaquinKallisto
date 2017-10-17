@@ -9,6 +9,7 @@
 #include <map>
 #include <fstream>
 #include <sstream>
+#include <iostream>
 
 #ifndef KSEQ_INIT_READY
 #define KSEQ_INIT_READY
@@ -1067,7 +1068,20 @@ void split(const std::string &s, char delim, Out result) {
     }
 }
 
-std::map<std::string, std::string> __seqs__;
+// Kmers counting
+std::map<std::string, unsigned> __kcounts__;
+
+void collectAnaquinResults()
+{
+    std::ofstream w("KallistoCount.txt");
+    
+    for (const auto &i : __kcounts__)
+    {
+        w << i.first << "\t" << i.second << std::endl;
+    }
+
+    w.close();
+}
 
 // use:  match(s,l,v)
 // pre:  v is initialized
@@ -1082,12 +1096,12 @@ void KmerIndex::match(const char *s, int l, std::vector<std::pair<KmerEntry, int
          * We can manually process the k-mers for now...
          */
         
-        std::cout << "Reading sequinsKmers.txt" << std::endl;
-        std::ifstream r("sequinsKmers.txt");
+        std::cout << "\nStarted reading reference k-mers" << std::endl;
+        std::ifstream r("CancerKM.txt");
         
         if (!r.good())
         {
-            throw "sequinsKmers.txt is missing";
+            throw std::runtime_error("CancerKM.txt is missing");
         }
         
         std::string line;
@@ -1102,12 +1116,13 @@ void KmerIndex::match(const char *s, int l, std::vector<std::pair<KmerEntry, int
                 continue;
             }
             
-            __seqs__[toks[1]] = toks[0]; // Normal
-            __seqs__[toks[2]] = toks[0]; // Reverse complement
+            __kcounts__[toks[1]] = 0; // Normal
+            __kcounts__[toks[2]] = 0; // Reverse complement
         }
 
         r.close();
         started = true;
+        std::cout << "Finished loading reference k-mers" << std::endl;
     }
 
     /*
@@ -1120,10 +1135,9 @@ void KmerIndex::match(const char *s, int l, std::vector<std::pair<KmerEntry, int
         auto a = ted->first.rep();
         auto b = a.toString();
         
-        if (__seqs__.count(b))
+        if (__kcounts__.count(b))
         {
-//            std::cout << b << std::endl;
-//            std::cout << 1 << std::endl;
+            __kcounts__[b]++; // Increment counter
         }
     }
     
