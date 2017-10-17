@@ -1058,9 +1058,25 @@ int KmerIndex::mapPair(const char *s1, int l1, const char *s2, int l2, int ec) c
 // pre:  v is initialized
 // post: v contains all equiv classes for the k-mers in s
 void KmerIndex::match(const char *s, int l, std::vector<std::pair<KmerEntry, int>>& v) const {
-  KmerIterator kit(s), kit_end;
-  bool backOff = false;
-  int nextPos = 0; // nextPosition to check
+
+    std::cout << s << std::endl;
+
+    /*
+     * Added by Ted!!!!! HACK to
+     */
+    
+    KmerIterator ted(s), ted_end;
+    
+    for (int i = 0;  ted != ted_end; ++i,++ted) {
+        auto a = ted->first.rep();
+        std::cout << a.toString() << std::endl;
+    }
+
+    
+    KmerIterator kit(s), kit_end;
+    bool backOff = false;
+    int nextPos = 0; // nextPosition to check
+
   for (int i = 0;  kit != kit_end; ++i,++kit) {
     // need to check it
     auto search = kmap.find(kit->first.rep());
