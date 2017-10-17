@@ -125,8 +125,6 @@ int ProcessBatchReads(KmerIndex& index, const ProgramOptions& opt, MinCollector&
   }
 
   return numreads;
-  
-
 }
 
 int ProcessReads(KmerIndex& index, const ProgramOptions& opt, MinCollector& tc) {
