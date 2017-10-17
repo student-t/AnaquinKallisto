@@ -66,7 +66,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "quant -i sequins.fa.index -o TryKallisto A.fastq.gz B.fastq.gz"
+            argument = "quant -i sequins.fa.index A.fastq.gz B.fastq.gz -o ABCD"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
