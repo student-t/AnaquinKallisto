@@ -26,10 +26,6 @@ void H5Writer::init(const std::string& fname, int num_bootstrap, int num_process
 
   vector_to_h5(postBias, aux_, "bias_normalized", false, compression_);
 
-  // info about run
-  std::vector<std::string> kal_version{ KALLISTO_VERSION };
-  vector_to_h5(kal_version, aux_, "kallisto_version", true, compression_);
-
   std::vector<int> idx_version{ static_cast<int>(index_version) };
   vector_to_h5(idx_version, aux_, "index_version", false, compression_);
 
@@ -50,21 +46,6 @@ H5Writer::~H5Writer() {
   H5Gclose(aux_);
   H5Gclose(root_);
   H5Fclose(file_id_);
-}
-
-void H5Writer::write_main(const EMAlgorithm& em,
-    const std::vector<std::string>& targ_ids,
-    const std::vector<int>& lengths) {
-  vector_to_h5(em.alpha_, root_, "est_counts", false, compression_);
-
-  vector_to_h5(targ_ids, aux_, "ids", true, compression_);
-  vector_to_h5(em.eff_lens_, aux_, "eff_lengths", false, compression_);
-  vector_to_h5(lengths, aux_, "lengths", false, compression_);
-}
-
-void H5Writer::write_bootstrap(const EMAlgorithm& em, int bs_id) {
-  std::string bs_id_str("bs" + std::to_string( bs_id ));
-  vector_to_h5(em.alpha_, bs_, bs_id_str.c_str(), false, compression_);
 }
 
 /**********************************************************************/
@@ -146,17 +127,6 @@ H5Converter::~H5Converter() {
 
 void H5Converter::write_aux() {
   std::string out_name(out_dir_ + "/run_info.json");
-
-  plaintext_aux(
-      out_name,
-      std::string(std::to_string(n_targs_)),
-      std::string(std::to_string(n_bs_)),
-      std::string(std::to_string(n_proc_)),
-      kal_version_,
-      std::string(std::to_string(idx_version_)),
-      start_time_,
-      call_
-      );
 }
 
 void H5Converter::convert() {
@@ -187,6 +157,4 @@ void H5Converter::convert() {
 void H5Converter::rw_from_counts(hid_t group_id, const std::string& count_name, const std::string& out_fname) {
   std::vector<double> alpha;
   read_dataset(group_id, count_name.c_str(), alpha);
-
-  plaintext_writer(out_fname, targ_ids_, alpha, eff_lengths_, lengths_);
 }

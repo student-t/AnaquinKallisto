@@ -9,125 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../src/KmerIndex.cpp"
-            timestampString = "529936059.59434"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1078"
-            endingLineNumber = "1078"
-            landmarkName = "collectAnaquinResults()"
-            landmarkType = "9">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "collectAnaquinResults()"
-                  moduleName = "Kallisto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tedwong/Sources/Kallisto/src/KmerIndex.cpp"
-                  timestampString = "529936062.885153"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1078"
-                  endingLineNumber = "1078"
-                  offsetFromSymbolStart = "737">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "collectAnaquinResults()"
-                  moduleName = "Kallisto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tedwong/Sources/Kallisto/src/KmerIndex.cpp"
-                  timestampString = "529936062.886638"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1078"
-                  endingLineNumber = "1078"
-                  offsetFromSymbolStart = "1423">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../src/ProcessReads.cpp"
-            timestampString = "529936062.556733"
+            timestampString = "530490814.141081"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "ProcessBatchReads(KmerIndex&amp; index, const ProgramOptions&amp; opt, MinCollector&amp; tc, std::vector&lt;std::vector&lt;int&gt;&gt; &amp;batchCounts)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/ProcessReads.cpp"
-            timestampString = "529936062.557183"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "491"
-            endingLineNumber = "491"
-            landmarkName = "ReadProcessor::operator()()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/ProcessReads.cpp"
-            timestampString = "529936062.55753"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "538"
-            endingLineNumber = "538"
-            landmarkName = "ReadProcessor::processBuffer()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/ProcessReads.cpp"
-            timestampString = "529936062.557861"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "528"
-            endingLineNumber = "528"
-            landmarkName = "ReadProcessor::processBuffer()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/main.cpp"
-            timestampString = "529936064.976593"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1130"
-            endingLineNumber = "1130"
-            landmarkName = "main(int argc, char *argv[])"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "ProcessReads(KmerIndex&amp; index, const ProgramOptions&amp; opt, MinCollector&amp; tc)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>

@@ -1,25 +1,7 @@
-/*
-#include <zlib.h>
-#include "kseq.h"
-#include <string>
-#include <vector>
-#include <unordered_map>
-#include <algorithm>
-
-#include <iostream>
-#include <fstream>
-#include "MinCollector.h"
-
-
-#include "common.h"
-*/
-
 #include <fstream>
 
 #include "ProcessReads.h"
 #include "kseq.h"
-#include "PseudoBam.h"
-#include "Fusion.hpp"
 
 void printVector(const std::vector<int>& v, std::ostream& o) {
   o << "[";

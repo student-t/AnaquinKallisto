@@ -1,10 +1,8 @@
 #ifndef KALLISTO_H5WRITER_H
 #define KALLISTO_H5WRITER_H
 
-#include "EMAlgorithm.h"
-
 #include "h5utils.h"
-#include "PlaintextWriter.h"
+//#include "PlaintextWriter.h"
 
 class H5Writer {
   public:
@@ -14,12 +12,6 @@ class H5Writer {
     void init(const std::string& fname, int num_bootstrap, int num_processed,
       const std::vector<int>& fld, const std::vector<int>& preBias, const std::vector<double>& postBias, uint compression, size_t index_version,
       const std::string& shell_call, const std::string& start_time);
-
-    void write_main(const EMAlgorithm& em,
-        const std::vector<std::string>& targ_ids,
-        const std::vector<int>& lengths);
-
-    void write_bootstrap(const EMAlgorithm& em, int bs_id);
 
   private:
     bool primed_;
