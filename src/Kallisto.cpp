@@ -138,10 +138,14 @@ void ParseOptionsEM(int argc, char **argv, ProgramOptions& opt) {
 
 struct KResults
 {
-    // Number of paired-end reads
-    unsigned reads;
+    // Total number of reads
+    unsigned nTot = 0;
     
+    // Number of reads estimated for sequins
+    unsigned nSeqs = 0;
     
+    // Number of reads estimated for genome
+    unsigned nGenome = 0;
 };
 
 KResults kallisto(const std::string &i, const std::string &p1, const std::string &p2)
@@ -155,11 +159,12 @@ KResults kallisto(const std::string &i, const std::string &p1, const std::string
     KmerIndex index(opt);
     
     extern void KMInit();
+    
+    // Initalize for reference k-mers
     KMInit();
     
     MinCollector collection(index, opt);
-    int num_processed = 0;
-    num_processed = ProcessReads(index, opt, collection);
+    ProcessReads(index, opt, collection);
     
     extern void KMAll();
     extern void KMResults();
@@ -168,7 +173,7 @@ KResults kallisto(const std::string &i, const std::string &p1, const std::string
     KMAll();
     
     // Extract sequin k-mers
-    //KMResults();
+    KMResults();
     
     KResults r;
     

@@ -6,15 +6,14 @@
 #include <assert.h>
 #include "KmerIterator.hpp"
 
-#define DEBUG 1
-
 // Reference kmers counting for sequins
 static std::map<std::string, unsigned> __seqs__;
 
 // All k-mers (for debugging)
 static std::map<std::string, unsigned> __all__;
 
-template <typename Out> void split(const std::string &s, char delim, Out result) {
+template <typename Out> void split(const std::string &s, char delim, Out result)
+{
     std::stringstream ss(s);
     std::string item;
     while (std::getline(ss, item, delim)) {

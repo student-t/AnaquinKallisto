@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
             endingLineNumber = "82"
-            landmarkName = "KMAll()"
+            landmarkName = "ParseOptionsEM(int argc, char **argv, ProgramOptions&amp; opt)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
             endingLineNumber = "56"
-            landmarkName = "KMCount(const char *s1)"
+            landmarkName = "ParseOptionsEM(int argc, char **argv, ProgramOptions&amp; opt)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
