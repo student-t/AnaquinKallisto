@@ -21,18 +21,6 @@ std::vector<int> intersect(const std::vector<int>& x, const std::vector<int>& y)
   return v;
 }
 
-void MinCollector::init_mean_fl_trunc(double mean, double sd) {
-  auto tmp_trunc_fl = trunc_gaussian_fld(0, MAX_FRAG_LEN, mean, sd);
-  assert( tmp_trunc_fl.size() == mean_fl_trunc.size() );
-
-  std::copy( tmp_trunc_fl.begin(), tmp_trunc_fl.end(), mean_fl_trunc.begin() );
-
-  mean_fl = mean_fl_trunc[ MAX_FRAG_LEN - 1 ];
-
-  has_mean_fl = true;
-  has_mean_fl_trunc = true;
-}
-
 int MinCollector::intersectKmers(std::vector<std::pair<KmerEntry,int>>& v1,
                           std::vector<std::pair<KmerEntry,int>>& v2, bool nonpaired, std::vector<int> &u) const {
   std::vector<int> u1 = intersectECs(v1);

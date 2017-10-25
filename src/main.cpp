@@ -1,29 +1,8 @@
 #include <string>
 #include <iostream>
-#include <random>
-#include <sstream>
-#include <vector>
-#include <sys/stat.h>
 #include <getopt.h>
- #include <thread>
-#include <time.h>
-
-#include <cstdio>
-
-#include <zlib.h>
-
-#include "common.h"
+#include <sys/stat.h>
 #include "ProcessReads.h"
-#include "KmerIndex.h"
-#include "Kmer.hpp"
-#include "MinCollector.h"
-#include "weights.h"
-#include "Inspect.h"
-#include "H5Writer.h"
-
-
-//#define ERROR_STR "\033[1mError:\033[0m"
-#define ERROR_STR "Error:"
 
 using namespace std;
 
@@ -160,32 +139,24 @@ void ParseOptionsEM(int argc, char **argv, ProgramOptions& opt) {
 int main(int argc, char *argv[])
 {
     ProgramOptions opt;
-    string cmd(argv[1]);
-   if (cmd == "quant") {
-      ParseOptionsEM(argc-1,argv+1,opt);
-      if (false /*!CheckOptionsEM(opt)*/) {
-//        cerr << endl;
-//        usageEM(false);
-//        exit(1);
-      } else {
-        KmerIndex index(opt);
-          
-          extern void KMInit();
-          KMInit();
-          
-        MinCollector collection(index, opt);
-        int num_processed = 0;
-        num_processed = ProcessReads(index, opt, collection);
-          
-          extern void KMAll();
-          extern void KMResults();
-          
-          KMAll();
-          //KMResults();
-          
-          num_processed = num_processed;
-      }
-    }
+
+    ParseOptionsEM(argc-1,argv+1,opt);
+    KmerIndex index(opt);
+    
+    extern void KMInit();
+    KMInit();
+    
+    MinCollector collection(index, opt);
+    int num_processed = 0;
+    num_processed = ProcessReads(index, opt, collection);
+    
+    extern void KMAll();
+    extern void KMResults();
+    
+    KMAll();
+    //KMResults();
+    
+    num_processed = num_processed;
    
-  return 0;
+    return 0;
 }

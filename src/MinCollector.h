@@ -7,9 +7,7 @@
 #include <sstream>
 #include <vector>
 #include <unordered_map>
-
 #include "KmerIndex.h"
-#include "weights.h"
 
 const int MAX_FRAG_LEN = 1000;
 
@@ -73,9 +71,6 @@ struct MinCollector {
 
   // compute the conditional mean of each target given the FLD
   void compute_mean_frag_lens_trunc();
-
-  // this function should only be used for SE data
-  void init_mean_fl_trunc(double mean, double sd);
 
   KmerIndex& index;
   std::vector<int> counts;
