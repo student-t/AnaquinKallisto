@@ -17,8 +17,6 @@
 
 #include "KmerHashTable.h"
 
-#include "hash.hpp"
-
 std::string revcomp(const std::string s);
 
 

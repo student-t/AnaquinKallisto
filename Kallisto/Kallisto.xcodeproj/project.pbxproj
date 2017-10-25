@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EF8B395E1F9EA3F30060B811 /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8B39571F9EA3630060B811 /* common.cpp */; };
-		EF8B395F1F9EA3F30060B811 /* h5utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8B39471F9EA3620060B811 /* h5utils.cpp */; };
 		EF8B39611F9EA3F30060B811 /* hash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8B39401F9EA3610060B811 /* hash.cpp */; };
 		EF8B39631F9EA3F30060B811 /* Kmer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8B394B1F9EA3620060B811 /* Kmer.cpp */; };
 		EF8B39641F9EA3F30060B811 /* KmerIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8B393D1F9EA3610060B811 /* KmerIndex.cpp */; };
@@ -34,23 +32,18 @@
 
 /* Begin PBXFileReference section */
 		EF8B393D1F9EA3610060B811 /* KmerIndex.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = KmerIndex.cpp; path = ../src/KmerIndex.cpp; sourceTree = "<group>"; };
-		EF8B393E1F9EA3610060B811 /* h5utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = h5utils.h; path = ../src/h5utils.h; sourceTree = "<group>"; };
 		EF8B393F1F9EA3610060B811 /* KmerIterator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = KmerIterator.hpp; path = ../src/KmerIterator.hpp; sourceTree = "<group>"; };
 		EF8B39401F9EA3610060B811 /* hash.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = hash.cpp; path = ../src/hash.cpp; sourceTree = "<group>"; };
 		EF8B39421F9EA3610060B811 /* Kmer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Kmer.hpp; path = ../src/Kmer.hpp; sourceTree = "<group>"; };
 		EF8B39431F9EA3620060B811 /* MinCollector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MinCollector.cpp; path = ../src/MinCollector.cpp; sourceTree = "<group>"; };
 		EF8B39461F9EA3620060B811 /* KmerIterator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = KmerIterator.cpp; path = ../src/KmerIterator.cpp; sourceTree = "<group>"; };
-		EF8B39471F9EA3620060B811 /* h5utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = h5utils.cpp; path = ../src/h5utils.cpp; sourceTree = "<group>"; };
 		EF8B39481F9EA3620060B811 /* MinCollector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MinCollector.h; path = ../src/MinCollector.h; sourceTree = "<group>"; };
 		EF8B39491F9EA3620060B811 /* ProcessReads.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ProcessReads.cpp; path = ../src/ProcessReads.cpp; sourceTree = "<group>"; };
 		EF8B394B1F9EA3620060B811 /* Kmer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Kmer.cpp; path = ../src/Kmer.cpp; sourceTree = "<group>"; };
-		EF8B394C1F9EA3620060B811 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = common.h; path = ../src/common.h; sourceTree = "<group>"; };
 		EF8B394E1F9EA3620060B811 /* Kallisto.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Kallisto.cpp; path = ../src/Kallisto.cpp; sourceTree = "<group>"; };
 		EF8B39501F9EA3620060B811 /* KmerHashTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KmerHashTable.h; path = ../src/KmerHashTable.h; sourceTree = "<group>"; };
 		EF8B39511F9EA3620060B811 /* KmerIndex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KmerIndex.h; path = ../src/KmerIndex.h; sourceTree = "<group>"; };
-		EF8B39521F9EA3630060B811 /* Multinomial.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Multinomial.hpp; path = ../src/Multinomial.hpp; sourceTree = "<group>"; };
 		EF8B39561F9EA3630060B811 /* ProcessReads.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProcessReads.h; path = ../src/ProcessReads.h; sourceTree = "<group>"; };
-		EF8B39571F9EA3630060B811 /* common.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = common.cpp; path = ../src/common.cpp; sourceTree = "<group>"; };
 		EF8B39581F9EA3630060B811 /* kseq.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = kseq.h; path = ../src/kseq.h; sourceTree = "<group>"; };
 		EF8B39591F9EA3640060B811 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../src/main.cpp; sourceTree = "<group>"; };
 		EF8B395B1F9EA3640060B811 /* hash.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = hash.hpp; path = ../src/hash.hpp; sourceTree = "<group>"; };
@@ -75,8 +68,6 @@
 		EFB8C1B61F95BCBC0003A5FA = {
 			isa = PBXGroup;
 			children = (
-				EF8B39571F9EA3630060B811 /* common.cpp */,
-				EF8B39471F9EA3620060B811 /* h5utils.cpp */,
 				EF8B39401F9EA3610060B811 /* hash.cpp */,
 				EF8B394E1F9EA3620060B811 /* Kallisto.cpp */,
 				EF8B394B1F9EA3620060B811 /* Kmer.cpp */,
@@ -85,8 +76,6 @@
 				EF8B39591F9EA3640060B811 /* main.cpp */,
 				EF8B39431F9EA3620060B811 /* MinCollector.cpp */,
 				EF8B39491F9EA3620060B811 /* ProcessReads.cpp */,
-				EF8B394C1F9EA3620060B811 /* common.h */,
-				EF8B393E1F9EA3610060B811 /* h5utils.h */,
 				EF8B39501F9EA3620060B811 /* KmerHashTable.h */,
 				EF8B39511F9EA3620060B811 /* KmerIndex.h */,
 				EF8B39581F9EA3630060B811 /* kseq.h */,
@@ -95,7 +84,6 @@
 				EF8B395B1F9EA3640060B811 /* hash.hpp */,
 				EF8B39421F9EA3610060B811 /* Kmer.hpp */,
 				EF8B393F1F9EA3610060B811 /* KmerIterator.hpp */,
-				EF8B39521F9EA3630060B811 /* Multinomial.hpp */,
 				EFB8C1F91F95C2990003A5FA /* Frameworks */,
 				EFB8C1C01F95BCBC0003A5FA /* Products */,
 			);
@@ -176,13 +164,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF8B39631F9EA3F30060B811 /* Kmer.cpp in Sources */,
-				EF8B395F1F9EA3F30060B811 /* h5utils.cpp in Sources */,
 				EF8B39671F9EA3F30060B811 /* MinCollector.cpp in Sources */,
 				EF8B39691F9EA3F30060B811 /* ProcessReads.cpp in Sources */,
 				EF8B39661F9EA3F30060B811 /* main.cpp in Sources */,
 				EF8B39651F9EA3F30060B811 /* KmerIterator.cpp in Sources */,
 				EF8B39611F9EA3F30060B811 /* hash.cpp in Sources */,
-				EF8B395E1F9EA3F30060B811 /* common.cpp in Sources */,
 				EF8B39641F9EA3F30060B811 /* KmerIndex.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

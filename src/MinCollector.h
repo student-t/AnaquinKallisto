@@ -1,7 +1,6 @@
 #ifndef KALLISTO_MINCOLLECTOR_H
 #define KALLISTO_MINCOLLECTOR_H
 
-#include "common.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>

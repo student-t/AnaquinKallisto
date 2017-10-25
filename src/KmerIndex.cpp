@@ -842,11 +842,11 @@ void KmerIndex::load(ProgramOptions& opt, bool loadKmerTable) {
   size_t kmap_size;
   in.read((char *)&kmap_size, sizeof(kmap_size));
 
-  std::cerr << "[index] k-mer length: " << k << std::endl;
-  std::cerr << "[index] number of targets: " << pretty_num(num_trans)
-    << std::endl;
-  std::cerr << "[index] number of k-mers: " << pretty_num(kmap_size)
-    << std::endl;
+//  std::cerr << "[index] k-mer length: " << k << std::endl;
+//  std::cerr << "[index] number of targets: " << pretty_num(num_trans)
+//    << std::endl;
+//  std::cerr << "[index] number of k-mers: " << pretty_num(kmap_size)
+//    << std::endl;
 
   kmap.clear();
   if (loadKmerTable) {
@@ -869,8 +869,8 @@ void KmerIndex::load(ProgramOptions& opt, bool loadKmerTable) {
   size_t ecmap_size;
   in.read((char *)&ecmap_size, sizeof(ecmap_size));
 
-  std::cerr << "[index] number of equivalence classes: "
-    << pretty_num(ecmap_size) << std::endl;
+//  std::cerr << "[index] number of equivalence classes: "
+//    << pretty_num(ecmap_size) << std::endl;
   ecmap.resize(ecmap_size);
   int tmp_id;
   int tmp_ecval;

@@ -95,15 +95,15 @@ int ProcessBatchReads(KmerIndex& index, const ProgramOptions& opt, MinCollector&
     std::cerr << "[quant] learning parameters for sequence specific bias" << std::endl;
   }
 
-  std::cerr << "[quant] processed " << pretty_num(numreads) << " reads, "
-    << pretty_num(nummapped) << " reads pseudoaligned";
+//  std::cerr << "[quant] processed " << pretty_num(numreads) << " reads, "
+//    << pretty_num(nummapped) << " reads pseudoaligned";
   if (nummapped == 0) {
     std::cerr << "[~warn] no reads pseudoaligned." << std::endl;
   }
   if (!opt.umi) {
     std::cerr << std::endl;
   } else {
-    std::cerr << ", " << pretty_num(MP.num_umi) << " unique UMIs mapped" << std::endl;
+//    std::cerr << ", " << pretty_num(MP.num_umi) << " unique UMIs mapped" << std::endl;
   }
 
   return numreads;
