@@ -6,6 +6,8 @@
 #include <assert.h>
 #include "KmerIterator.hpp"
 
+#define DEBUG 1
+
 // Reference kmers counting for sequins
 static std::map<std::string, unsigned> __seqs__;
 
