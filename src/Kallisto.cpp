@@ -6,8 +6,8 @@
 #include <assert.h>
 #include "KmerIterator.hpp"
 
-// Kmers counting
-static std::map<std::string, unsigned> __kcounts__;
+// Reference kmers counting for sequins
+static std::map<std::string, unsigned> __seqs__;
 
 // All k-mers (for debugging)
 static std::map<std::string, unsigned> __all__;
@@ -20,11 +20,7 @@ template <typename Out> void split(const std::string &s, char delim, Out result)
     }
 }
 
-/*
- * Build list of reference k-mers for sequins and human genome
- */
-
-void Anaquin_buildRef()
+void KMInit()
 {
     std::ifstream r("CancerKM.txt");
     
@@ -45,8 +41,8 @@ void Anaquin_buildRef()
             continue;
         }
         
-        __kcounts__[toks[1]] = 0; // Normal
-        __kcounts__[toks[2]] = 0; // Reverse complement
+        __seqs__[toks[1]] = 0; // Normal
+        __seqs__[toks[2]] = 0; // Reverse complement
     }
     
     r.close();
@@ -61,12 +57,14 @@ static void KMCount(const char *s1)
     {
         const auto s = iter->first.rep().toString();
         
-        if (__kcounts__.count(s))
+        if (__seqs__.count(s))
         {
-            __kcounts__[s]++;
+            __seqs__[s]++;
         }
         
+#ifdef DEBUG
         __all__[s]++;
+#endif
     }
 }
 
@@ -78,7 +76,8 @@ void KMCount(const char *s1, const char *s2)
 
 void KMAll()
 {
-    std::ofstream w("KallistoAll.txt");
+#ifdef DEBUG
+    std::ofstream w("KMAll.txt");
     
     for (const auto &i : __all__)
     {
@@ -86,13 +85,14 @@ void KMAll()
     }
     
     w.close();
+#endif
 }
 
 void KMResults()
 {
     std::ofstream w("KallistoCount.txt");
     
-    for (const auto &i : __kcounts__)
+    for (const auto &i : __seqs__)
     {
         w << i.first << "\t" << i.second << std::endl;
     }

@@ -1115,13 +1115,11 @@ int main(int argc, char *argv[]) {
         usageEM(false);
         exit(1);
       } else {
-        // run the em algorithm
         KmerIndex index(opt);
-//        index.load(opt);
-//        if (opt.fusion) {
-//          // need full transcript sequences
-//          index.loadTranscriptSequences();
-//        }
+          
+          extern void KMInit();
+          KMInit();
+          
         MinCollector collection(index, opt);
         int num_processed = 0;
         num_processed = ProcessReads(index, opt, collection);
