@@ -9,14 +9,62 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../src/ProcessReads.cpp"
-            timestampString = "530490814.141081"
+            filePath = "../src/Kallisto.cpp"
+            timestampString = "530625353.637015"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "ProcessReads(KmerIndex&amp; index, const ProgramOptions&amp; opt, MinCollector&amp; tc)"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "Anaquin_buildRef()"
             landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/Kallisto.cpp"
+            timestampString = "530625353.637363"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "KMAll()"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KMAll()"
+                  moduleName = "Kallisto"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tedwong/Sources/Kallisto/src/Kallisto.cpp"
+                  timestampString = "530625353.987344"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "737">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KMAll()"
+                  moduleName = "Kallisto"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tedwong/Sources/Kallisto/src/Kallisto.cpp"
+                  timestampString = "530625353.98937"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "1423">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

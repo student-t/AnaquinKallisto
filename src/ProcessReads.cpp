@@ -109,8 +109,8 @@ int ProcessBatchReads(KmerIndex& index, const ProgramOptions& opt, MinCollector&
   return numreads;
 }
 
-int ProcessReads(KmerIndex& index, const ProgramOptions& opt, MinCollector& tc) {
-
+int ProcessReads(KmerIndex& index, const ProgramOptions& opt, MinCollector& tc)
+{
   int limit = 1048576;
   std::vector<std::pair<const char*, int>> seqs;
   seqs.reserve(limit/50);
@@ -123,25 +123,6 @@ int ProcessReads(KmerIndex& index, const ProgramOptions& opt, MinCollector& tc) 
   //int tlencount = (opt.fld == 0.0) ? 10000 : 0;
   size_t numreads = 0;
   size_t nummapped = 0;
-  bool paired = !opt.single_end;
-
-  if (paired) {
-    std::cerr << "[quant] running in paired-end mode" << std::endl;
-  } else {
-    std::cerr << "[quant] running in single-end mode" << std::endl;
-  }
-
-  for (int i = 0; i < opt.files.size(); i += (paired) ? 2 : 1) {
-    if (paired) {
-      std::cerr << "[quant] will process pair " << (i/2 +1) << ": "  << opt.files[i] << std::endl
-                << "                             " << opt.files[i+1] << std::endl;
-    } else {
-      std::cerr << "[quant] will process file " << i+1 << ": " << opt.files[i] << std::endl;
-    }
-  }
-
-  // for each file
-  std::cerr << "[quant] finding pseudoalignments for the reads ..."; std::cerr.flush();
 
   if (opt.pseudobam) {
     index.writePseudoBamHeader(std::cout);
@@ -152,20 +133,6 @@ int ProcessReads(KmerIndex& index, const ProgramOptions& opt, MinCollector& tc) 
   numreads = MP.numreads;
   nummapped = MP.nummapped;
   std::cerr << " done" << std::endl;
-
-  //std::cout << "betterCount = " << betterCount << ", out of betterCand = " << betterCand << std::endl;
-
-  if (opt.bias) {
-    std::cerr << "[quant] learning parameters for sequence specific bias" << std::endl;
-  }
-
-  std::cerr << "[quant] processed " << pretty_num(numreads) << " reads, "
-    << pretty_num(nummapped) << " reads pseudoaligned" << std::endl;
-  if (nummapped == 0) {
-    std::cerr << "[~warn] no reads pseudoaligned." << std::endl;
-  }
-
-  
 
   /*
   for (int i = 0; i < 4096; i++) {
@@ -506,6 +473,7 @@ void ReadProcessor::processBuffer()
         l2 = seqs[i].second;
         numreads++;
 
+        KMCount(s1, s2);
     }
     
     std::cout << numreads << std::endl;

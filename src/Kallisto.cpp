@@ -9,6 +9,9 @@
 // Kmers counting
 static std::map<std::string, unsigned> __kcounts__;
 
+// All k-mers (for debugging)
+static std::map<std::string, unsigned> __all__;
+
 template <typename Out> void split(const std::string &s, char delim, Out result) {
     std::stringstream ss(s);
     std::string item;
@@ -49,11 +52,12 @@ void Anaquin_buildRef()
     r.close();
 }
 
-static void Anaquin_countKM(const char *s1)
+static void KMCount(const char *s1)
 {
+    Kmer::k = 31;
     KmerIterator iter(s1), end;
     
-    for (int i = 0;  iter != end; ++i, ++iter)
+    for (int i = 0; iter != end; ++i, ++iter)
     {
         const auto s = iter->first.rep().toString();
         
@@ -61,16 +65,30 @@ static void Anaquin_countKM(const char *s1)
         {
             __kcounts__[s]++;
         }
+        
+        __all__[s]++;
     }
 }
 
-void Anaquin_countKM(const char *s1, const char *s2)
+void KMCount(const char *s1, const char *s2)
 {
-    Anaquin_countKM(s1);
-    Anaquin_countKM(s2);
+    KMCount(s1);
+    KMCount(s2);
 }
 
-void Anaquin_printResults()
+void KMAll()
+{
+    std::ofstream w("KallistoAll.txt");
+    
+    for (const auto &i : __all__)
+    {
+        w << i.first << "\t" << i.second << std::endl;
+    }
+    
+    w.close();
+}
+
+void KMResults()
 {
     std::ofstream w("KallistoCount.txt");
     
@@ -81,5 +99,3 @@ void Anaquin_printResults()
     
     w.close();
 }
-
-

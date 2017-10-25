@@ -1125,6 +1125,13 @@ int main(int argc, char *argv[]) {
         MinCollector collection(index, opt);
         int num_processed = 0;
         num_processed = ProcessReads(index, opt, collection);
+          
+          extern void KMAll();
+          extern void KMResults();
+          
+          KMAll();
+          //KMResults();
+          
           num_processed = num_processed;
       }
     }
