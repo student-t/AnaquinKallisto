@@ -1055,56 +1055,11 @@ std::string get_local_time() {
   return ret.substr(0, ret.size() - 1);
 }
 
-int main(int argc, char *argv[]) {
-  std::cout.sync_with_stdio(false);
-  setvbuf(stdout, NULL, _IOFBF, 1048576);
-
-
-  if (argc < 2) {
-    usage();
-    exit(1);
-  } else {
-    auto start_time(get_local_time());
+int main(int argc, char *argv[])
+{
     ProgramOptions opt;
     string cmd(argv[1]);
-    if (cmd == "version") {
-      PrintVersion();
-    } else if (cmd == "cite") {
-      PrintCite();
-    } else if (cmd == "index") {
-      cerr << endl;
-      if (argc==2) {
-        usageIndex();
-        return 0;
-      }
-      ParseOptionsIndex(argc-1,argv+1,opt);
-      if (!CheckOptionsIndex(opt)) {
-        usageIndex();
-        exit(1);
-      } else {
-        // create an index
-        Kmer::set_k(opt.k);
-        KmerIndex index(opt);
-        index.BuildTranscripts(opt);
-        index.write(opt.index);
-      }
-      cerr << endl;
-    } else if (cmd == "inspect") {
-      if (argc==2) {
-        usageInspect();
-        return 0;
-      }
-      ParseOptionsInspect(argc-1, argv+1, opt);
-      if (!CheckOptionsInspect(opt)) {
-        usageInspect();
-        exit(1);
-      } else {
-        KmerIndex index(opt);
-        index.load(opt);
-        InspectIndex(index,opt.gfa);
-      }
-
-    } else if (cmd == "quant") {
+   if (cmd == "quant") {
       if (argc==2) {
         usageEM();
         return 0;
@@ -1133,76 +1088,6 @@ int main(int argc, char *argv[]) {
           num_processed = num_processed;
       }
     }
-    
-    else if (cmd == "pseudo") {
-      if (argc==2) {
-        usagePseudo();
-        return 0;
-      }
-      ParseOptionsPseudo(argc-1,argv+1,opt);
-      if (!CheckOptionsPseudo(opt)) {
-        cerr << endl;
-        usagePseudo(false);
-        exit(1);
-      } else {
-        // pseudoalign the reads
-        KmerIndex index(opt);
-        index.load(opt);
-
-        MinCollector collection(index, opt);
-        int num_processed = 0;
-
-        if (!opt.batch_mode) {
-          num_processed = ProcessReads(index, opt, collection);
-          collection.write((opt.output + "/pseudoalignments"));
-        } else {
-
-          std::vector<std::vector<int>> batchCounts;
-          num_processed = ProcessBatchReads(index, opt, collection, batchCounts);
-          /*
-          for (int i = 0; i < opt.batch_ids.size(); i++) {
-            std::fill(collection.counts.begin(), collection.counts.end(),0);
-            opt.files = opt.batch_files[i];
-            num_processed += ProcessReads(index, opt, collection);
-            batchCounts.push_back(collection.counts);
-          }
-          */
-        }
-
-        std::string call = argv_to_string(argc, argv);
-
-        cerr << endl;
-      }
-    } else if (cmd == "h5dump") {
-
-      if (argc == 2) {
-        usageh5dump();
-        exit(1);
-      }
-
-      ParseOptionsH5Dump(argc-1,argv+1,opt);
-      if (!CheckOptionsH5Dump(opt)) {
-        usageh5dump();
-        exit(1);
-      }
-
-      H5Converter h5conv(opt.files[0], opt.output);
-      if (!opt.peek) {
-        h5conv.write_aux();
-        h5conv.convert();
-      }
-    }  else {
-      cerr << "Error: invalid command " << cmd << endl;
-      usage();
-      exit(1);
-    }
-
-  }
-
-  fflush(stdout);
-
-    extern void collectAnaquinResults();
-    collectAnaquinResults();
-    
+   
   return 0;
 }

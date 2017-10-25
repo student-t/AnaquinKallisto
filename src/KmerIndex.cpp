@@ -1068,78 +1068,63 @@ void split(const std::string &s, char delim, Out result) {
     }
 }
 
-// Kmers counting
-std::map<std::string, unsigned> __kcounts__;
-
-void collectAnaquinResults()
-{
-    std::ofstream w("KallistoCount.txt");
-    
-    for (const auto &i : __kcounts__)
-    {
-        w << i.first << "\t" << i.second << std::endl;
-    }
-
-    w.close();
-}
-
 // use:  match(s,l,v)
 // pre:  v is initialized
 // post: v contains all equiv classes for the k-mers in s
 void KmerIndex::match(const char *s, int l, std::vector<std::pair<KmerEntry, int>>& v) const {
 
-    static bool started = false;
-    
-    if (!started)
-    {
-        /*
-         * We can manually process the k-mers for now...
-         */
-        
-        std::cout << "\nStarted reading reference k-mers" << std::endl;
-        std::ifstream r("CancerKM.txt");
-        
-        if (!r.good())
-        {
-            throw std::runtime_error("CancerKM.txt is missing");
-        }
-        
-        std::string line;
-        while (std::getline(r, line))
-        {
-            std::vector<std::string> toks;
-            split(line, '\t', std::back_inserter(toks));
-            assert(!toks.empty());
-            
-            if (toks[0] == "Name")
-            {
-                continue;
-            }
-            
-            __kcounts__[toks[1]] = 0; // Normal
-            __kcounts__[toks[2]] = 0; // Reverse complement
-        }
+//    static bool started = false;
+//
+//    if (!started)
+//    {
+//        /*
+//         * We can manually process the k-mers for now...
+//         */
+//
+//        std::cout << "\nStarted reading reference k-mers" << std::endl;
+//        std::ifstream r("CancerKM.txt");
+//
+//        if (!r.good())
+//        {
+//            throw std::runtime_error("CancerKM.txt is missing");
+//        }
+//
+//        std::string line;
+//        while (std::getline(r, line))
+//        {
+//            std::vector<std::string> toks;
+//            split(line, '\t', std::back_inserter(toks));
+//            assert(!toks.empty());
+//
+//            if (toks[0] == "Name")
+//            {
+//                continue;
+//            }
+//
+//            __kcounts__[toks[1]] = 0; // Normal
+//            __kcounts__[toks[2]] = 0; // Reverse complement
+//        }
+//
+//        r.close();
+//        started = true;
+//        std::cout << "Finished loading reference k-mers" << std::endl;
+//    }
 
-        r.close();
-        started = true;
-        std::cout << "Finished loading reference k-mers" << std::endl;
-    }
-
-    /*
-     * Added by Ted!!!!! HACK to
-     */
-    
-    KmerIterator ted(s), ted_end;
-    
-    for (int i = 0;  ted != ted_end; ++i,++ted) {
-        auto a = ted->first.rep();
-        auto b = a.toString();
-        
-        if (__kcounts__.count(b))
-        {
-            __kcounts__[b]++; // Increment counter
-        }
-    }
+//    /*
+//     * Added by Ted!!!!! HACK to
+//     */
+//    
+//    KmerIterator ted(s), ted_end;
+//    
+//    for (int i = 0;  ted != ted_end; ++i,++ted) {
+//        auto a = ted->first.rep();
+//        auto b = a.toString();
+//        
+//        if (__kcounts__.count(b))
+//        {
+//            __kcounts__[b]++; // Increment counter
+//        }
+//    }
     
     KmerIterator kit(s), kit_end;
     bool backOff = false;
