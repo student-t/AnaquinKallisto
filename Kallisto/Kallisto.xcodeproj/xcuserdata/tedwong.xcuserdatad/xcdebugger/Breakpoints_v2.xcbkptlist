@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/KmerIndex.cpp"
-            timestampString = "530633668.649027"
+            timestampString = "530635214.102931"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1130"
@@ -26,45 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/Kallisto.cpp"
-            timestampString = "530633668.64933"
+            timestampString = "530635214.103164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
             endingLineNumber = "82"
             landmarkName = "KMAll()"
             landmarkType = "9">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "KMAll()"
-                  moduleName = "Kallisto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tedwong/Sources/Kallisto/src/Kallisto.cpp"
-                  timestampString = "530632773.353928"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84"
-                  offsetFromSymbolStart = "737">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "KMAll()"
-                  moduleName = "Kallisto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tedwong/Sources/Kallisto/src/Kallisto.cpp"
-                  timestampString = "530632773.35549"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84"
-                  offsetFromSymbolStart = "1423">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/Kallisto.cpp"
-            timestampString = "530633668.649556"
+            timestampString = "530635214.103355"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"

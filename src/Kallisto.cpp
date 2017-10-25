@@ -1,103 +1,182 @@
-#include <map>
-#include <vector>
 #include <string>
-#include <fstream>
-#include <sstream>
-#include <assert.h>
-#include "KmerIterator.hpp"
+#include <iostream>
+#include <getopt.h>
+#include <sys/stat.h>
+#include "ProcessReads.h"
 
-#define DEBUG 1
+using namespace std;
 
-// Reference kmers counting for sequins
-static std::map<std::string, unsigned> __seqs__;
+void ParseOptionsEM(int argc, char **argv, ProgramOptions& opt) {
+  int verbose_flag = 0;
+  int plaintext_flag = 0;
+  int write_index_flag = 0;
+  int single_flag = 0;
+  int strand_FR_flag = 0;
+  int strand_RF_flag = 0;
+  int bias_flag = 0;
+  int pbam_flag = 0;
+  int fusion_flag = 0;
 
-// All k-mers (for debugging)
-static std::map<std::string, unsigned> __all__;
+  const char *opt_string = "t:i:l:s:o:n:m:d:b:";
+  static struct option long_options[] = {
+    // long args
+    {"verbose", no_argument, &verbose_flag, 1},
+    {"plaintext", no_argument, &plaintext_flag, 1},
+    {"write-index", no_argument, &write_index_flag, 1},
+    {"single", no_argument, &single_flag, 1},
+    {"fr-stranded", no_argument, &strand_FR_flag, 1},
+    {"rf-stranded", no_argument, &strand_RF_flag, 1},
+    {"bias", no_argument, &bias_flag, 1},
+    {"pseudobam", no_argument, &pbam_flag, 1},
+    {"fusion", no_argument, &fusion_flag, 1},
+    {"seed", required_argument, 0, 'd'},
+    // short args
+    {"threads", required_argument, 0, 't'},
+    {"index", required_argument, 0, 'i'},
+    {"fragment-length", required_argument, 0, 'l'},
+    {"sd", required_argument, 0, 's'},
+    {"output-dir", required_argument, 0, 'o'},
+    {"iterations", required_argument, 0, 'n'},
+    {"min-range", required_argument, 0, 'm'},
+    {"bootstrap-samples", required_argument, 0, 'b'},
+    {0,0,0,0}
+  };
+  int c;
+  int option_index = 0;
+  while (true) {
+    c = getopt_long(argc,argv,opt_string, long_options, &option_index);
 
-template <typename Out> void split(const std::string &s, char delim, Out result) {
-    std::stringstream ss(s);
-    std::string item;
-    while (std::getline(ss, item, delim)) {
-        *(result++) = item;
+    if (c == -1) {
+      break;
     }
+
+    switch (c) {
+    case 0:
+      break;
+    case 't': {
+      stringstream(optarg) >> opt.threads;
+      break;
+    }
+    case 'i': {
+      opt.index = optarg;
+      break;
+    }
+    case 'l': {
+      stringstream(optarg) >> opt.fld;
+      break;
+    }
+    case 's': {
+      stringstream(optarg) >> opt.sd;
+      break;
+    }
+    case 'o': {
+      opt.output = optarg;
+      break;
+    }
+    case 'n': {
+      stringstream(optarg) >> opt.iterations;
+      break;
+    }
+    case 'm': {
+      stringstream(optarg) >> opt.min_range;
+    }
+    case 'b': {
+      stringstream(optarg) >> opt.bootstrap;
+      break;
+    }
+    case 'd': {
+      stringstream(optarg) >> opt.seed;
+      break;
+    }
+    default: break;
+    }
+  }
+
+  // all other arguments are fast[a/q] files to be read
+  for (int i = optind; i < argc; i++) {
+    opt.files.push_back(argv[i]);
+  }
+
+  if (verbose_flag) {
+    opt.verbose = true;
+  }
+
+  if (plaintext_flag) {
+    opt.plaintext = true;
+  }
+
+  if (write_index_flag) {
+    opt.write_index = true;
+  }
+
+  if (single_flag) {
+    opt.single_end = true;
+  }
+
+  if (strand_FR_flag) {
+    opt.strand_specific = true;
+    opt.strand = ProgramOptions::StrandType::FR;
+  }
+  
+  if (strand_RF_flag) {
+    opt.strand_specific = true;
+    opt.strand = ProgramOptions::StrandType::RF;
+  }
+
+  if (bias_flag) {
+    opt.bias = true;
+  }
+
+  if (pbam_flag) {
+    opt.pseudobam = true;
+  }
+
+  if (fusion_flag) {
+    opt.fusion = true;
+  }
 }
 
-void KMInit()
+struct KResults
 {
-    std::ifstream r("CancerKM.txt");
+    // Number of paired-end reads
+    unsigned reads;
     
-    if (!r.good())
-    {
-        throw std::runtime_error("Reference file for k-mers is missing");
-    }
     
-    std::string line;
-    while (std::getline(r, line))
-    {
-        std::vector<std::string> toks;
-        split(line, '\t', std::back_inserter(toks));
-        assert(!toks.empty());
-        
-        if (toks[0] == "Name")
-        {
-            continue;
-        }
-        
-        __seqs__[toks[1]] = 0; // Normal
-        __seqs__[toks[2]] = 0; // Reverse complement
-    }
+};
+
+KResults kallisto(const std::string &i, const std::string &p1, const std::string &p2)
+{
+    ProgramOptions opt;
     
-    r.close();
+    opt.index = i;
+    opt.files.push_back(p1);
+    opt.files.push_back(p2);
+
+    KmerIndex index(opt);
+    
+    extern void KMInit();
+    KMInit();
+    
+    MinCollector collection(index, opt);
+    int num_processed = 0;
+    num_processed = ProcessReads(index, opt, collection);
+    
+    extern void KMAll();
+    extern void KMResults();
+    
+    // Extract all k-mers (only for debugging)
+    KMAll();
+    
+    // Extract sequin k-mers
+    //KMResults();
+    
+    KResults r;
+    
+    return r;
 }
 
-static void KMCount(const char *s1)
+int main(int argc, char *argv[])
 {
-    Kmer::k = 31;
-    KmerIterator iter(s1), end;
-    
-    for (int i = 0; iter != end; ++i, ++iter)
-    {
-        const auto s = iter->first.rep().toString();
-        
-        if (__seqs__.count(s))
-        {
-            __seqs__[s]++;
-        }
-        
-#ifdef DEBUG
-        __all__[s]++;
-#endif
-    }
-}
-
-void KMCount(const char *s1, const char *s2)
-{
-    KMCount(s1);
-    KMCount(s2);
-}
-
-void KMAll()
-{
-#ifdef DEBUG
-    std::ofstream w("KMAll.txt");
-    
-    for (const auto &i : __all__)
-    {
-        w << i.first << "\t" << i.second << std::endl;
-    }
-    
-    w.close();
-#endif
-}
-
-void KMResults()
-{
-    std::ofstream w("KallistoCount.txt");
-    
-    for (const auto &i : __seqs__)
-    {
-        w << i.first << "\t" << i.second << std::endl;
-    }
-    
-    w.close();
+    kallisto("sequins.fa.index", "A.fastq", "B.fastq");
+    return 0;
 }
