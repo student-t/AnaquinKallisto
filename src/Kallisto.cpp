@@ -182,6 +182,6 @@ KResults kallisto(const std::string &i, const std::string &p1, const std::string
 
 int main(int argc, char *argv[])
 {
-    kallisto("sequins.fa.index", "A.fastq", "B.fastq");
+    kallisto(argv[1], argv[2], argv[3]);
     return 0;
 }

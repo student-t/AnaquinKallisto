@@ -66,7 +66,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "quant -i sequins.fa.index A.fastq B.fastq -o ABCD"
+            argument = "sequins.fa.index L.V.95.1.fq L.V.95.2.fq"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

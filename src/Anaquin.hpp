@@ -12,6 +12,9 @@ static std::map<std::string, unsigned> __seqs__;
 // All k-mers (for debugging)
 static std::map<std::string, unsigned> __all__;
 
+// Statistics
+std::map<std::string, unsigned> stats;
+
 template <typename Out> void split(const std::string &s, char delim, Out result)
 {
     std::stringstream ss(s);

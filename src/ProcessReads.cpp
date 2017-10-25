@@ -475,8 +475,6 @@ void ReadProcessor::processBuffer()
 
         KMCount(s1, s2);
     }
-    
-    std::cout << numreads << std::endl;
 }
 
 void ReadProcessor::clear() {
