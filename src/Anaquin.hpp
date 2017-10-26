@@ -70,11 +70,11 @@ static void KMCancerSpan()
 
 static void KMCancerAll()
 {
-    std::ifstream r("CancerKMAll.txt");
+    std::ifstream r("SequinsKMAll.txt");
     
     if (!r.good())
     {
-        throw std::runtime_error("Invalid CancerKMAll.txt");
+        throw std::runtime_error("Invalid SequinsKMAll.txt");
     }
     
     std::string line;
@@ -113,7 +113,7 @@ static void KMCount(const char *s)
     
     for (int i = 0; iter != end; ++i, ++iter)
     {
-        const auto k = iter->first.rep().toString();
+        auto k = iter->first.rep().toString();
         
         /*
          * Does the k-mer span sequin variants?
@@ -173,19 +173,18 @@ void KMAll()
 #endif
 }
 
-void KMResults(unsigned &nGen, unsigned &nSeq)
+void KMResults(unsigned &nGen, unsigned &nSeq, std::map<std::string, unsigned> &span)
 {
     nGen = __nGen__;
     nSeq = __nSeq__;
+    span = __span__;
 
     //std::map<std::string, unsigned>
-    
-    std::ofstream w("KallistoCount.txt");
-    
-    for (const auto &i : __span__)
-    {
-        w << i.first << "\t" << i.second << std::endl;
-    }
-    
-    w.close();
+//    std::ofstream w("KallistoCount.txt");
+//
+//    for (const auto &i : __span__)
+//    {
+//        w << i.first << "\t" << i.second << std::endl;
+//    }
+//    w.close();
 }

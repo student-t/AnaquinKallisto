@@ -473,6 +473,11 @@ void ReadProcessor::processBuffer()
         l2 = seqs[i].second;
         numreads++;
 
+        if ((numreads % 10000) == 0)
+        {
+            std::cout << numreads << std::endl;
+        }
+        
         KMCount(s1, s2);
     }
 }

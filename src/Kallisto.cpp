@@ -39,6 +39,7 @@ void kallisto(const std::string &i, const std::string &p1, const std::string &p2
     
     std::cout << nGen << std::endl;
     std::cout << nSeq << std::endl;
+    std::cout << (float)nSeq / (nSeq + nGen) << std::endl;
 }
 
 int main(int argc, char *argv[])
