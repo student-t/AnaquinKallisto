@@ -9,6 +9,9 @@ using namespace std;
 
 void kallisto(const std::string &i, const std::string &p1, const std::string &p2)
 {
+    std::cout << p1 << std::endl;
+    std::cout << p2 << std::endl;
+
     ProgramOptions opt;
     
     opt.index = i;

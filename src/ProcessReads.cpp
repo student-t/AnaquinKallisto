@@ -455,8 +455,7 @@ void ReadProcessor::operator()() {
 }
 
 #include "Anaquin.hpp"
-
-
+static unsigned __i__ = 0;
 
 void ReadProcessor::processBuffer()
 {
@@ -472,10 +471,11 @@ void ReadProcessor::processBuffer()
         s2 = seqs[i].first;
         l2 = seqs[i].second;
         numreads++;
+        __i__++;
 
-        if ((numreads % 10000) == 0)
+        if ((__i__ % 10000) == 0)
         {
-            std::cout << numreads << std::endl;
+            std::cout << __i__ << std::endl;
         }
         
         KMCount(s1, s2);
