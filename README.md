@@ -1,3 +1,12 @@
+g++ -DBACKWARD_HAS_BFD -lz -std=c++11 *.cpp
+
+
+
+
+
+
+
+
 # kallisto
 
 __kallisto__ is a program for quantifying abundances of transcripts from
