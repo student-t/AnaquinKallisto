@@ -6,14 +6,24 @@
 #include <assert.h>
 #include "KmerIterator.hpp"
 
-// Reference kmers counting for sequins
-static std::map<std::string, unsigned> __seqs__;
-
-// All k-mers (for debugging)
+// All reference k-mers
 static std::map<std::string, unsigned> __all__;
 
-// Statistics
-std::map<std::string, unsigned> stats;
+// Reference k-mers for spanning variants
+static std::map<std::string, unsigned> __span__;
+
+// All k-mers (for debugging)
+static std::map<std::string, unsigned> __debug__;
+
+/*
+ * Statistics
+ */
+
+// Number of reads estimated to be sequins
+static unsigned __nSeq__ = 0;
+
+// Number of reads estimated to be genome (not sequins)
+static unsigned __nGen__ = 0;
 
 template <typename Out> void split(const std::string &s, char delim, Out result)
 {
@@ -24,13 +34,17 @@ template <typename Out> void split(const std::string &s, char delim, Out result)
     }
 }
 
-void KMInit()
+/*
+ * Initlaize k-mers spanning variants, they are useful for estimating allele frequency
+ */
+
+static void KMCancerSpan()
 {
-    std::ifstream r("CancerKM.txt");
+    std::ifstream r("CancerKMSpan.txt");
     
     if (!r.good())
     {
-        throw std::runtime_error("Reference file for k-mers is missing");
+        throw std::runtime_error("Invalid CancerKMSpan.txt");
     }
     
     std::string line;
@@ -40,35 +54,102 @@ void KMInit()
         split(line, '\t', std::back_inserter(toks));
         assert(!toks.empty());
         
-        if (toks[0] == "Name")
-        {
-            continue;
-        }
-        
-        __seqs__[toks[1]] = 0; // Normal
-        __seqs__[toks[2]] = 0; // Reverse complement
+        if (toks[0] == "Name") { continue; }
+
+        __span__[toks[1]] = 0; // Normal
+        __span__[toks[2]] = 0; // Reverse complement
     }
     
     r.close();
+    assert(!__span__.empty());
 }
 
-static void KMCount(const char *s1)
+/*
+ * Initalize all k-mers, useful for estimating dilution
+ */
+
+static void KMCancerAll()
+{
+    std::ifstream r("CancerKMAll.txt");
+    
+    if (!r.good())
+    {
+        throw std::runtime_error("Invalid CancerKMAll.txt");
+    }
+    
+    std::string line;
+    while (std::getline(r, line))
+    {
+        std::vector<std::string> toks;
+        split(line, '\t', std::back_inserter(toks));
+        assert(!toks.empty());
+        
+        if (toks[0] == "Name") { continue; }
+        
+        __all__[toks[1]] = 0; // Normal
+        __all__[toks[2]] = 0; // Reverse complement
+    }
+    
+    r.close();
+    assert(!__all__.empty());
+}
+
+void KMInit()
+{
+    KMCancerAll();
+    KMCancerSpan();
+ }
+
+static void KMCount(const char *s)
 {
     Kmer::k = 31;
-    KmerIterator iter(s1), end;
+    KmerIterator iter(s), end;
+    
+    // Number of k-mers that are sequins
+    unsigned isSeq = 0;
+    
+    // Number of k-mers that are genome
+    unsigned isGen = 0;
     
     for (int i = 0; iter != end; ++i, ++iter)
     {
-        const auto s = iter->first.rep().toString();
+        const auto k = iter->first.rep().toString();
         
-        if (__seqs__.count(s))
+        /*
+         * Does the k-mer span sequin variants?
+         */
+        
+        if (__span__.count(k))
         {
-            __seqs__[s]++;
+            __span__[k]++;
         }
+
+        /*
+         * One of the reference k-mers?
+         */
         
+        if (__all__.count(k))
+        {
+            __all__[k]++;
+            isSeq++;
+        }
+        else
+        {
+            isGen++;
+        }
+
 #ifdef DEBUG
-        __all__[s]++;
+        __debug__[k]++;
 #endif
+    }
+    
+    if (isSeq > isGen)
+    {
+        __nSeq__++;
+    }
+    else
+    {
+        __nGen__++;
     }
 }
 
@@ -83,7 +164,7 @@ void KMAll()
 #ifdef DEBUG
     std::ofstream w("KMAll.txt");
     
-    for (const auto &i : __all__)
+    for (const auto &i : __debug__)
     {
         w << i.first << "\t" << i.second << std::endl;
     }
@@ -92,11 +173,16 @@ void KMAll()
 #endif
 }
 
-void KMResults()
+void KMResults(unsigned &nGen, unsigned &nSeq)
 {
+    nGen = __nGen__;
+    nSeq = __nSeq__;
+
+    //std::map<std::string, unsigned>
+    
     std::ofstream w("KallistoCount.txt");
     
-    for (const auto &i : __seqs__)
+    for (const auto &i : __span__)
     {
         w << i.first << "\t" << i.second << std::endl;
     }
