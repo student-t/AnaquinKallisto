@@ -4,10 +4,14 @@
 #include <fstream>
 #include <sstream>
 #include <assert.h>
+#include "KmerIndex.h"
 #include "KmerIterator.hpp"
 
 // All reference k-mers
 static std::map<std::string, unsigned> __all__;
+
+// Kallisto index for all sequin k-mers
+static std::shared_ptr<KmerIndex> __seqsIndex__;
 
 // Reference k-mers for spanning variants
 static std::map<std::string, unsigned> __span__;
@@ -68,7 +72,7 @@ static void KMCancerSpan()
  * Initalize all k-mers, useful for estimating dilution
  */
 
-static void KMCancerAll()
+static void KMSequins()
 {
     std::ifstream r("SequinsKMAll.txt");
     
@@ -96,7 +100,14 @@ static void KMCancerAll()
 
 void KMInit()
 {
-    KMCancerAll();
+    ProgramOptions o;
+    o.k = 31;
+    o.index = "sequins.fa.index";
+
+    __seqsIndex__ = std::shared_ptr<KmerIndex>(new KmerIndex(o));
+    __seqsIndex__->load(o);
+    
+    KMSequins();
     KMCancerSpan();
  }
 
@@ -130,6 +141,18 @@ static void KMCount(const char *s)
         
         if (__all__.count(k))
         {
+            std::vector<std::pair<KmerEntry, int> > v;
+            __seqsIndex__->match(k.c_str(), 31, v);
+            
+            if (v.empty())
+            {
+                assert(false);
+            }
+            else
+            {
+               // std::cout << "GOOD" << std::endl;
+            }
+            
             __all__[k]++;
             isSeq++;
         }

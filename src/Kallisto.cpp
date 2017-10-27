@@ -5,6 +5,8 @@
 #include <sys/stat.h>
 #include "ProcessReads.h"
 
+#include "KmerIndex.h"
+
 using namespace std;
 
 void kallisto(const std::string &i, const std::string &p1, const std::string &p2)
