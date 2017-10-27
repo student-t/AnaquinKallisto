@@ -136,7 +136,7 @@ static void KMCount(const char *s)
         }
 
         /*
-         * One of the reference k-mers?
+         * Is this one of the reference k-mers?
          */
         
         if (__all__.count(k))
